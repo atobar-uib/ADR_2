@@ -1,0 +1,14 @@
+.reveal {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 1.2em;
+  color: #003366; /* azul hospitalario */
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+  color: #0077b6;
+}
+
+.reveal section img {
+  border-radius: 10px;
+  box-shadow: 0 0 10px #aaa;
+}

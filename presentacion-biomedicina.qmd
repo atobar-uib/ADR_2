@@ -1,0 +1,75 @@
+---
+title: "Impacto de los MicroARNs en Enfermedades Neurodegenerativas"
+author: "Nombre del autor"
+institute: "Universidad / Instituto de Investigación"
+format:
+  revealjs:
+    theme: white
+    slide-number: true
+    transition: slide
+    background-transition: fade
+    logo: images/logo.png  # Opcional: tu logo aquí
+    css: custom-style.css  # Puedes personalizar estilos
+    chalkboard: true       # Para pizarras si lo necesitas
+    toc: true
+    toc-depth: 2
+    footer: "Congreso de Biomedicina 2025"
+---
+
+## Introducción
+
+- ¿Qué son los microARNs?
+- Rol en la regulación génica
+- Importancia biomédica
+
+---
+
+## Contexto Clínico
+
+![Neuronas afectadas](images/neuronas.jpg)
+
+- Enfermedades como Alzheimer, Parkinson, ELA
+- Evidencia reciente del papel de microARNs
+
+---
+
+## Objetivos
+
+1. Analizar perfiles de expresión de microARNs
+2. Identificar correlaciones clínicas
+3. Proponer biomarcadores potenciales
+
+---
+
+## Metodología
+
+- Análisis de muestras (n=30)
+- qPCR, RNA-seq
+- Bioinformática: DESeq2, EdgeR
+
+---
+
+## Resultados
+
+- Cambios significativos en miR-124, miR-132
+- Correlación con progresión clínica
+
+```{r}
+# Puedes incluir gráficos aquí si usas R
+miRNA_expression=1:100
+plot(miRNA_expression)
+```
+
+---
+
+## Conclusiones
+
+- microARNs como biomarcadores emergentes
+- Potencial terapéutico
+- Futuros estudios longitudinales necesarios
+
+---
+
+## Preguntas
+
+Gracias por su atención.
