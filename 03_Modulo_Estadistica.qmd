@@ -1,0 +1,5 @@
+# Módulo 3. Estadística básica  (tidyverse) 
+
+
+## Representación de datos I 
+## Estadística descriptiba básica

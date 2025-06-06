@@ -3,21 +3,21 @@ project:
   output-dir: docs
   
 book:
-  title: "ApLabAD"
+  title: "Análiside Datos con R y Python"
   author: "RICUIB"
   date: " febrero 2025"
-  subtitle: "Apuntes de Laboratorio de Análisis de Datos"
+  subtitle: "Guía para el Análisis de Datos con R y Python"
   
   chapters:
     - index.qmd
     - intro.qmd
-    - part: probabilidad_y_variables_aleatorias.qmd
+    - part: MicrocreditoI.qmd
       chapters: 
-        - preliminares.qmd
-        - probabilidad.qmd
-        - variables_aleatorias.qmd
-        - distibuciones_notables_1.qmd
-        - distibuciones_notables_2.qmd
+        - 01_Modulo_R.qmd
+        - 02_Modulo_Exploracion.qmd
+        - 03_Modulo_Estadistica.qmd
+        - 04_Modulo_Informes.qmd
+        - 05_Modulo_Graficos.qmd
 
 bibliography: references.bib
 

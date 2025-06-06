@@ -1,0 +1,9 @@
+# Módulo 2. Análisis exploratorio de datos (EDA) 
+
+
+## Tipos de datos
+
+## Tablas: Data frames y tibbles 
+
+
+## Manipulación básica de datos  (dplyr) 

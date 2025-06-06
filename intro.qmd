@@ -1,0 +1,4 @@
+# Introducción
+
+Estas son unas notas para el análiside datos vcn R
+

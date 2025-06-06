@@ -1,0 +1,11 @@
+# Módulo 5. Representación gráfica de datos estadísticos 
+
+## Gráficos
+
+```{r}
+knitr::include_graphics("dad.jpg")
+```
+
+
+
+## Representación de datos  II
