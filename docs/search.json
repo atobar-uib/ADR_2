@@ -1,0 +1,143 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Análiside Datos con R y Python",
+    "section": "",
+    "text": "Prefacio\nEste documento es una versión de unas notas para Análisis de Datos con R\n\nHa sido elaborado con Quarto\n\nRStudio, PBC. (2022). Quarto (Version 1.0).",
+    "crumbs": [
+      "Prefacio"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introducción",
+    "section": "",
+    "text": "Estas son unas notas para el análiside datos vcn R",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducción</span>"
+    ]
+  },
+  {
+    "objectID": "01_Modulo_R.html",
+    "href": "01_Modulo_R.html",
+    "title": "2  Introducción a R y Rstudio",
+    "section": "",
+    "text": "2.1 Introducción a la IDE Rstudio",
+    "crumbs": [
+      "Microcredito I",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción a R y Rstudio</span>"
+    ]
+  },
+  {
+    "objectID": "01_Modulo_R.html#importación-y-lectura-de-datos",
+    "href": "01_Modulo_R.html#importación-y-lectura-de-datos",
+    "title": "2  Introducción a R y Rstudio",
+    "section": "2.2 Importación y lectura de datos",
+    "text": "2.2 Importación y lectura de datos",
+    "crumbs": [
+      "Microcredito I",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introducción a R y Rstudio</span>"
+    ]
+  },
+  {
+    "objectID": "02_Modulo_Exploracion.html",
+    "href": "02_Modulo_Exploracion.html",
+    "title": "3  Módulo 2. Análisis exploratorio de datos (EDA)",
+    "section": "",
+    "text": "3.1 Tipos de datos",
+    "crumbs": [
+      "Microcredito I",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Módulo 2. Análisis exploratorio de datos (EDA)</span>"
+    ]
+  },
+  {
+    "objectID": "02_Modulo_Exploracion.html#tablas-data-frames-y-tibbles",
+    "href": "02_Modulo_Exploracion.html#tablas-data-frames-y-tibbles",
+    "title": "3  Módulo 2. Análisis exploratorio de datos (EDA)",
+    "section": "3.2 Tablas: Data frames y tibbles",
+    "text": "3.2 Tablas: Data frames y tibbles",
+    "crumbs": [
+      "Microcredito I",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Módulo 2. Análisis exploratorio de datos (EDA)</span>"
+    ]
+  },
+  {
+    "objectID": "02_Modulo_Exploracion.html#manipulación-básica-de-datos-dplyr",
+    "href": "02_Modulo_Exploracion.html#manipulación-básica-de-datos-dplyr",
+    "title": "3  Módulo 2. Análisis exploratorio de datos (EDA)",
+    "section": "3.3 Manipulación básica de datos (dplyr)",
+    "text": "3.3 Manipulación básica de datos (dplyr)",
+    "crumbs": [
+      "Microcredito I",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Módulo 2. Análisis exploratorio de datos (EDA)</span>"
+    ]
+  },
+  {
+    "objectID": "03_Modulo_Estadistica.html",
+    "href": "03_Modulo_Estadistica.html",
+    "title": "4  Módulo 3. Estadística básica (tidyverse)",
+    "section": "",
+    "text": "4.1 Representación de datos I",
+    "crumbs": [
+      "Microcredito I",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Módulo 3. Estadística básica  (tidyverse)</span>"
+    ]
+  },
+  {
+    "objectID": "03_Modulo_Estadistica.html#estadística-descriptiva-básica",
+    "href": "03_Modulo_Estadistica.html#estadística-descriptiva-básica",
+    "title": "4  Módulo 3. Estadística básica (tidyverse)",
+    "section": "4.2 Estadística descriptiva básica",
+    "text": "4.2 Estadística descriptiva básica",
+    "crumbs": [
+      "Microcredito I",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Módulo 3. Estadística básica  (tidyverse)</span>"
+    ]
+  },
+  {
+    "objectID": "04_Modulo_Informes.html",
+    "href": "04_Modulo_Informes.html",
+    "title": "5  Módulo 4. Informes Quarto/Rmarkdown",
+    "section": "",
+    "text": "5.1 Generación de informes.",
+    "crumbs": [
+      "Microcredito I",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Módulo 4. Informes Quarto/Rmarkdown</span>"
+    ]
+  },
+  {
+    "objectID": "04_Modulo_Informes.html#manipulación-de-plantillas.",
+    "href": "04_Modulo_Informes.html#manipulación-de-plantillas.",
+    "title": "5  Módulo 4. Informes Quarto/Rmarkdown",
+    "section": "5.2 Manipulación de plantillas.",
+    "text": "5.2 Manipulación de plantillas.",
+    "crumbs": [
+      "Microcredito I",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Módulo 4. Informes Quarto/Rmarkdown</span>"
+    ]
+  },
+  {
+    "objectID": "05_Modulo_Graficos.html",
+    "href": "05_Modulo_Graficos.html",
+    "title": "6  Módulo 5. Representación gráfica de datos estadísticos",
+    "section": "",
+    "text": "6.1 Gráficos\nknitr::include_graphics(\"dad.jpg\")",
+    "crumbs": [
+      "Microcredito I",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Módulo 5. Representación gráfica de datos estadísticos</span>"
+    ]
+  },
+  {
+    "objectID": "05_Modulo_Graficos.html#representación-de-datos-ii",
+    "href": "05_Modulo_Graficos.html#representación-de-datos-ii",
+    "title": "6  Módulo 5. Representación gráfica de datos estadísticos",
+    "section": "6.2 Representación de datos II",
+    "text": "6.2 Representación de datos II\nTEXTO DE PRUEBA",
+    "crumbs": [
+      "Microcredito I",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Módulo 5. Representación gráfica de datos estadísticos</span>"
+    ]
+  }
+]
