@@ -1,0 +1,35 @@
+\babel@toc {spanish}{}\relax 
+\beamer@sectionintoc {1}{Conociendo R}{7}{0}{1}
+\beamer@sectionintoc {2}{Operaciones básicas}{16}{0}{2}
+\beamer@sectionintoc {3}{Introducción}{31}{0}{3}
+\beamer@sectionintoc {4}{Fórmulas matemáticas}{33}{0}{4}
+\beamer@sectionintoc {5}{Parámetros de los chuncks de R}{60}{0}{5}
+\beamer@sectionintoc {6}{Estructuras de datos}{75}{0}{6}
+\beamer@sectionintoc {7}{Factores}{92}{0}{7}
+\beamer@sectionintoc {8}{Lists}{97}{0}{8}
+\beamer@sectionintoc {9}{Matrices}{102}{0}{9}
+\beamer@sectionintoc {10}{Gráficos R base}{120}{0}{10}
+\beamer@sectionintoc {11}{Hojas de datos: data frames}{144}{0}{11}
+\beamer@sectionintoc {12}{Análisis de datos}{172}{0}{12}
+\beamer@sectionintoc {13}{Descripción de datos cualitativos}{180}{0}{13}
+\beamer@sectionintoc {14}{Ejemplo final}{245}{0}{14}
+\beamer@sectionintoc {15}{Analisis de datos ordinales}{256}{0}{15}
+\beamer@sectionintoc {16}{Frecuencias para datos ordinales}{259}{0}{16}
+\beamer@sectionintoc {17}{Descripción de datos ordinales con R}{271}{0}{17}
+\beamer@sectionintoc {18}{Frecuencias para datos ordinales}{299}{0}{18}
+\beamer@sectionintoc {19}{Descripción de datos ordinales con R}{311}{0}{19}
+\beamer@sectionintoc {20}{Descripción de datos cuantitativos}{339}{0}{20}
+\beamer@sectionintoc {21}{Medidas de tendencia central}{352}{0}{21}
+\beamer@sectionintoc {22}{Medidas de posición}{359}{0}{22}
+\beamer@sectionintoc {23}{Medidas de dispersión}{369}{0}{23}
+\beamer@sectionintoc {24}{Diagramas de caja}{388}{0}{24}
+\beamer@sectionintoc {25}{Analis de datos cuantitativos agrupados}{403}{0}{25}
+\beamer@sectionintoc {26}{Cómo agrupar datos}{410}{0}{26}
+\beamer@sectionintoc {27}{Ejemplo 2}{422}{0}{27}
+\beamer@sectionintoc {28}{Agrupando datos con R}{436}{0}{28}
+\beamer@sectionintoc {29}{Estudiando datos agrupados}{441}{0}{29}
+\beamer@sectionintoc {30}{Ejemplo 2 - Continuación}{448}{0}{30}
+\beamer@sectionintoc {31}{Ejemplo 3}{454}{0}{31}
+\beamer@sectionintoc {32}{Estadísticos para datos agrupados}{471}{0}{32}
+\beamer@sectionintoc {33}{Histogramas}{486}{0}{33}
+\beamer@sectionintoc {34}{Ejemplo 2 - Continuación}{512}{0}{34}

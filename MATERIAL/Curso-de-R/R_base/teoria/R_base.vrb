@@ -1,0 +1,11 @@
+\frametitle{Solución}
+\phantomsection\label{soluciuxf3n-47}
+Dibujamos el histograma con \texttt{histRelCum}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{histRelCum}\NormalTok{(cw,L)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_base_files/figure-beamer/unnamed-chunk-254-1.pdf}

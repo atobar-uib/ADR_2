@@ -1,0 +1,746 @@
+---
+title: "Introducción a  ciencia de datos: tidyverse"
+author: ""
+date: '10-2022'
+output:
+  beamer_presentation: 
+    includes:
+      in_header: header_pagenrs_complet.tex
+    theme: CambridgeUS
+    toc: yes
+    slide_level: 2
+    keep_tex: yes
+  slidy_presentation:
+    incremental: no
+  ioslides_presentation:
+    incremental: no
+    widescreen: true
+lang: es-ES
+linkcolor: green
+classoption: aspectratio=169 
+---
+
+
+```{r setup, include=FALSE}
+#AnnArbor 
+#linkcolor: #191970
+knitr::opts_chunk$set(echo = TRUE, comment = NA,cache=TRUE)
+library(tidyverse)
+```
+
+# Introducción
+
+## La librerías de `tidyverse`
+
+\blue{Tidyverse}  es una  colección de paquetes/librerías  de R para ciencia de datos con diseño similar [tidyverse.org](https://www.tidyverse.org/)
+
+\red{ La idea principal es establecer una tecnología que aproxime el lenguaje natural a la manipulación de datos} [Wickham, et al. (2019)](https://joss.theoj.org/papers/10.21105/joss.01686){width="30%"}
+
+[Hadley Wickham](https://hadley.nz/) es el director de los científicos de datos de RStudio y profesor adjunto de estadística en la Universidad de Auckland, la Universidad de Stanford y la Universidad de Rice. 
+
+Las librerías de tidyverse han venido a sustituir R base por su eficiencia y facilidad de programación para no informáticos.
+
+Casi todas las consultas  a páginas técnicas de R son o incluyen código de `tidyverse`.
+
+
+```{r, echo=FALSE, out.width='10%',fig.align='right'}
+knitr::include_graphics("Imgs/hex-tidyverse.png")
+```
+
+
+
+## Las librerías de `tidyverse`
+
+**Paquetes de `tidyverse` base :**
+
+* `readr`: lectura de datos
+* `tibble`: una clase 'tbl_df' (el 'tibble') con una comprobación más estricta y un mejor formato que el data frame tradicional.
+* `stringr`: paquete de funciones para texto
+* `forcats`: paquete de funciones para factores
+* `tidyr`:  arreglo y limpieza de datos 
+* `dplyr`: manipulación de datos
+* `ggplot2`:   visualización de datos (gráficos)
+* `purrr`: programación funcional (pipes)
+
+
+Hay muchos otros paquetes para fines especiales que se integran sin problemas, por ejemplo, lubridate (variables de tiempo), stringr (texto), forcats (factores), ...
+
+```{r, echo=F, out.width='5%', fig.align='right'}
+knitr::include_graphics("Imgs/hex-tidyverse.png")
+```
+
+## Instalar y cargar `tidyverse`
+
+```{r,warning=FALSE, message=TRUE}
+#install.packages("tidyverse")
+library(tidyverse)
+```
+```
+-- Attaching packages --------------------------------------- tidyverse 1.3.1 --
+v ggplot2 3.3.5 v purrr 0.3.4
+v tibble 3.1.4 v dplyr 1.0.7
+v tidyr 1.1.3 v stringr 1.4.0
+v readr 2.0.1 v forcats 0.5.1
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag() masks stats::lag()
+```
+
+
+Se puede ver la versión del paquete tidyverse y la de los paquetes base de tidyverse.
+
+\red{Cuidado que algunas funciones de R se sobrescriben por sus equivalentes de} `tidyverse`} 
+
+En ocasiones es preferible indicar explícitamente el nombre de la función que deseamos utilizar, por ejemplo: `dplyr::group_by` para distinguir de `plyr::group_by` (dplyr es una evolución del paquete plyr) .
+
+
+##  Más sobre `tidyverse`
+
+Todos estos paquetes están pensados para:
+
+1. Tener una tecnología  en la que puedan convivir desde informáticos  puros, economistas, matemáticos, gestores etc.  compartiendo el mismo flujo de datos...
+
+2. Facilitar el análisis y modelización de datos
+
+
+```{r, echo=F, out.width='60%', fig.align="center"}
+knitr::include_graphics("Imgs/data-science.png")
+```
+
+## Librerías para cada tarea
+
+
+```{r, echo=F, out.width='30%', fig.align="center"}
+knitr::include_graphics("Imgs/data-science.png")
+```
+* **Import:** `readr`  
+* **Tidy:** `tidyr`  
+* **Transform:** `dplyr`, `forcats`, `stringr`  
+* **Visualize:** `ggplot2`  
+* **Model:** `tidymodels`  
+* **Communicate:** `rmarkdown`  
+* **Program:** `magrittr`, `purrr`, `tibble`
+
+
+Algunos libros:
+
+* [Wickham/Grolemund (2017)](https://r4ds.had.co.nz/tidy-data.html).*
+* [Yihui Xie, J. J. Allaire, Garrett Grolemund](https://bookdown.org/yihui/rmarkdown/)
+
+
+##  Más sobre `tidyverse`
+
+Lo que se intenta es hacer un diseño y  una gramática  que sea sencilla como una API para usuarios no "tecnólogos".
+
+* Las `tibbles` como estructura de datos (superan a los `data.frames` y simplifican los `data.table`)
+
+* El operador `%>%` para crear flujos de datos  y  funciones.
+
+* Estandarizar la nomenclatura de las funciones,
+
+* Establecer un orden razonable  en  los argumentos de las funciones (por ejemplo, `fn(argumento_A = datos, argumento_B = etiquetas de las columnas, ...)`.
+
+##  Más sobre `tidyverse`
+
+La sintaxis del `tidyverse` puede verse como un "dialecto" de `R`. 
+
+
+```{r serpiente_camello, echo=FALSE,fig.align='center',out.width="40%"}
+knitr::include_graphics("Imgs/serpiente_camello.png")
+```
+
+*Nota: Para más información*, véase [Tidyverse Team (2020)](https://design.tidyverse.org/) y [Wickham (2019)](https://cran.r-project.org/web/packages/tidyverse/vignettes/manifesto.html).
+
+
+
+
+# Tidy data
+
+## ¿Qué es tidy data?
+
+Los conjuntos de datos ordenados son todos iguales; pero cada conjunto de datos desordenado es desordenado a su manera. [Wickham/Grolemund: r4ds](https://r4ds.had.co.nz/tidy-data.html)
+
+Si tenemos datos provenientes de distintas fuentes, seguramente tendremos que estructurarlos en una única tibble.
+
+**Principios de los datos estructurados:** 
+
+El concepto de datos ordenados implica conjuntos de datos rectangulares y tabulares compuestos por filas y columnas:
+
+1. Cada variable forma una columna.
+
+2. Cada observación forma una fila.
+
+3. Cada tipo de unidad de observación forma una tabla.
+
+## ¿Qué es tidy data?
+
+```{r tidydata, echo=FALSE,fig.align='center',out.width="60%"}
+knitr::include_graphics("Imgs/tidy_data.PNG")
+```
+
+## Estructurar y ordenar datos (tidy)
+
+**Violaciones de los principios de los datos ordenados:**
+
+1. Las cabeceras de las columnas son valores, no nombres de variables.  
+
+2. Se almacenan múltiples variables en una columna.  
+3. Las variables se almacenan tanto en filas como en columnas.  
+
+4. Se almacenan múltiples tipos de unidades de observación en la misma tabla. 
+
+5. Una misma unidad de observación se almacena en varias tablas.
+
+## Estructurar y ordenar datos
+
+Veamos ejemplos de lo anterior con unos datos de  [pingüinos](https://allisonhorst.github.io/palmerpenguins/) con los que seguiremos trabajando luego.
+
+```{r, warning=FALSE}
+#install.packages("palmerpenguins",dep=TRUE)
+library("palmerpenguins")
+print(penguins, width = 50)
+```
+
+
+## Estructurar y ordenar datos (tidy)
+
+```{r, echo=F, warning=F}
+set.seed(123)
+
+penguins %>% 
+  group_by(species, island) %>% 
+  summarise(n = n(), .groups = "drop") %>% 
+  pivot_wider(names_from = island, values_from = n) %>% 
+  unnest(cols = c(Biscoe, Dream, Torgersen))
+```
+
+```{r, echo=F}
+penguins %>% 
+  select(species, island, sex, year) %>% 
+  unite(col, species, sex) %>% 
+  sample_n(5)
+```
+
+```{r, echo=F, message=F, warning=F}
+penguins %>% 
+  select(bill_length_mm, bill_depth_mm, flipper_length_mm) %>% 
+  corrr::correlate(method = "pearson")
+```
+
+## Estructurar y ordenar datos (tidy)
+
+```{r , echo=F,message=F, warning=F}
+penguins %>% 
+  select(species, island, sex) %>% 
+  sample_n(3) %>% 
+  bind_rows(
+    mtcars %>%
+      tibble::rownames_to_column("model") %>% 
+      select(model, mpg, cyl) %>% 
+      sample_n(3)
+  )
+```
+
+```{r, echo=F, message=F, warning=F}
+penguins %>% 
+  select(species, island, sex) %>% 
+  sample_n(3) %>% 
+  bind_rows(
+    mtcars %>%
+      tibble::rownames_to_column("model") %>% 
+      select(model, mpg, cyl) %>% 
+      sample_n(3)
+  )
+```
+
+
+
+## Estructurar y ordenar datos (tidy)
+
+
+```{r plot_tidy, echo=F,fig.align="center",include=FALSE, out.width="30%"}
+png("Imgs/plot_tidy.png")
+set.seed(33)
+x=rnorm(1000)
+y=rnorm(1000)
+colores=cut(x,4)
+levels(colores)=c("red","blue","green","brown")
+par(mfrow=c(1,2))
+plot(x=x,y=y,pch=15,col=sample(c("red","blue","green","brown"),500,replace=TRUE),
+axes=FALSE,xlab="",ylab="",main="Datos NO tidy")
+plot(x=x,y=y,pch=15,col=as.character(colores),axes=FALSE,xlab="",ylab="",main="Datos tidy")
+par(mfrow=c(1,1))
+dev.off()
+```
+
+
+```{r tidy_data, echo=FALSE,fig.align='center',out.width="50%"}
+knitr::include_graphics("Imgs/plot_tidy.png")
+```
+
+
+# Magrittr  pipes (tuberías)
+
+## Datos de los pingüinos del Archipelago de Palmer (Antarctica) 
+
+Como mencionamos antes, para  poner ejemplos  de los distintos paquetes de `tidyverse` utilizamos datos del paquete `palmerpenguins` de [Allison Horst](https://allisonhorst.github.io/palmerpenguins/).
+
+El paquete incluye datos sobre los pingüinos observados en las islas del archipiélago Palmer, cerca de la estación Palmer, en la Antártida.
+
+
+```{r, echo=F, fig.align='center', out.width='30%'}
+knitr::include_graphics("Imgs/pinguinos_madagascar.jpg")
+```
+
+
+## Datos de los pingüinos
+
+```{r, echo=F, fig.align='center', out.width='35%'}
+knitr::include_graphics(c("Imgs/lter_penguins.png","Imgs/culmen_depth.png"))
+```
+
+
+
+## Operadores de "tuberías" para `R`
+
+```{r,fig.align='right',out.width="5%",fig.align='right',echo=FALSE}
+knitr::include_graphics("Imgs/logo_pipe.png")
+```
+
+ Los operadores pipes de `magrittr` son:
+
+* **Operador de tuberías:** `%>%`
+* **Operador de asignación:** `%<>%`
+* **Operador "T":** `%T>%`
+* **Operador de extracción ("exposition"):** `%$%`.
+
+**Ejemplo**
+```{r, eval=FALSE}
+rnorm(200) %>%
+matrix(ncol = 2) %T>%
+plot %>% # plot no suele retornar nada
+colSums
+```
+
+
+## Operadores de "tuberías" para `R`
+Estos operadores pretenden mejorar la legibilidad de los códigos de múltiples maneras:
+
+* Organizando las operaciones en una cadena de instrucciones encadenadas (de izquierda a derecha) fácilmente legible,
+
+* Evitando las llamadas a funciones anidadas, 
+
+* Minimizando el uso de asignaciones de variables locales (`<-`) y definiciones de funciones, 
+
+* Añadiendo y/o eliminando fácilmente pasos del "pipeline" sin romper el código.
+
+
+El operador  %$% (pasa  las variables  de una tibble/data.frame.
+
+```{r, message=FALSE, eval=FALSE}
+library(magrittr)
+iris %>%
+  subset(Sepal.Length > mean(Sepal.Length)) %$%
+  cor(Sepal.Length, Sepal.Width)
+```
+
+## Operadores de "tuberías" para `R`
+
+```{r out.width="50%", fig.align='center', message=FALSE}
+library(magrittr)
+data.frame(z = rnorm(100)) %$%  ts.plot(z)
+```
+
+
+
+## El operador  pipe 
+
+**pipes básicos:** pasan un valor, atributo  u objeto (LHS: Left Hand Side ) a la siguiente llamada de función (RHS: Right Hand Side) como **primer** argumento
+<br>
+
+```{r, eval=F}
+x %>% f # equivalente a: f(x)
+x %>% f(y) # equivalente a: f(x, y)
+x %>% f %>% g %>% h # equivalente a: h(g(f(x)))
+```
+
+## El operador  pipe
+
+**pipes con marcadores de posición:** reenvian un valor u objeto (LHS) a la siguiente llamada de función (RHS) como **cualquier** argumento
+
+
+```{r, eval=F}
+x %>% f(.) # equivalente a: x %>% f
+x %>% f(y, .) # equivalente a: f(y, x)
+x %>% f(y, z = .) # equivalente a: f(y, z = x)
+x %>% f(y = nrow(.),
+        z = ncol(.))  # equivalente a: f(x, y = nrow(x), z = ncol(x))
+```
+
+
+## Construcción de funciones con pipes
+
+Una secuencia de código que comienza con el marcador de posición (`.`) devuelve una función que puede utilizarse para aplicar posteriormente la tubería a valores concretos
+
+
+```{r, eval=F}
+f <- . %>% cos %>% sin # equivalente a: f <- function(.) sin(cos(.))
+```
+```{r, eval=F}
+f(20) # equivalente a: la tubería 20 %>% cos %>% sin
+```
+
+ 
+\blue{Nota: Para saber más sobre} `%>%`, haced `vignette("magrittr")` en la consola de R.
+
+
+\red{Se puede obtener la cadena}  `%>%`  en Rstudio desktop utilizando el atajo de teclado: 
+
+
+\red{Ctrl + Shift  + M}.
+
+## Ejemplo con el operador pipe
+
+**Pregunta:** ¿Cuál es la masa corporal media en gramos de todos los pingüinos observados en el año 2007 (tras excluir los valores perdidos)?
+
+
+**En un mundo sin pipes:**
+```{r, eval=F}
+mean(subset(penguins, year == 2007)$body_mass_g, na.rm = T)
+
+# alternativamente:
+peng_bm_2007 <- subset(penguins, year == 2007)$body_mass_g
+media(peng_bm_2007, na.rm = T)
+```
+
+**En un mundo con pipes:**
+```{r, eval=F}
+penguins %>% 
+  subset(year == 2007) %>% 
+  .$body_mass_g %>% 
+  mean(na.rm = T)
+```
+
+## Ventajas de usar pipes
+
+* El estilo secuencial  de las  tuberías mejora la legibilidad y la lectura que las funciones anidadas.
+
+* Hace innecesario almacenar los resultados intermedios.
+
+* Es muy fácil añadir  o eliminar pasos (empalmes de tuberías) individuales en el "pipe-line/canalización"
+
+
+## El pipe de R base
+
+Las versiones recientes de R ya vienen con un operador de tuberías nativo también (`|>`).
+
+```{r}
+mtcars |> head()  #  es lo mismo que head(mtcars)
+mtcars |> head(2) #  es lo mismo que  head(mtcars, 2)
+mtcars |> subset(cyl == 4) |> nrow()  
+```
+
+
+## Pipes avanzadas
+
+Los empalmes de tuberías más avanzados como la `%T%` nos permiten economizar lineas de código.
+
+* `%T>%` se puede utilizar para activar el efecto secundario de una función, por ejemplo, para imprimir salidas, y dejar que los datos originales pasen por alto el paso respectivo.
+
+```{r}
+penguins[1:5, c("island", "bill_length_mm" )] %T>% 
+  print %>% .$"bill_length_mm"  %>%
+  mean(na.rm=T)
+```
+## Tuberías avanzadas
+
+
+La pipe `%$%` extrae las variables del objeto LHS a la expresión RHS. Es equivalente a:
+
+```{r, eval=FALSE}
+plot(penguins$species, penguins$bill_length_mm)
+```
+
+
+```{r, fig.width=6, fig.asp=0.618, fig.retina=3,out.width="50%", fig.align='center'}
+penguins %$% 
+  plot(species,bill_length_mm) 
+```
+ 
+## Tuberías avanzadas
+
+El operador `%<>%` se puede utilizar de forma equivalente al operador de asignación de  `R` base: (`<-`). 
+
+Reasigna el resultado de la tubería a la variable inicial.
+
+\
+
+```{r, results='asis'}
+variable <- penguins$bill_length_mm
+variable %<>% mean(na.rm=T)
+variable
+```
+
+
+# Paquete tibble
+
+
+## Data frame avanzado: tibble
+
+EL paquete `tibble` proporciona un objeto de tipo data frame mejorado: `tbl_df`. Un `tibble` se puede crear de cuatro maneras diferentes.
+
+
+1. A partir de vectores de columna con `tibble()`.
+
+```{r}
+tibble(
+  x = c("a", "b"),
+  y = c(1, 2),
+  z = c(T, F)
+)
+```
+
+## Data frame avanzado: tibble
+
+2. Escribiendo  en texto por columnas `tibble`,  fila por fila con `tribble()`.
+
+```{r}
+tribble(
+  ~x, ~y, ~z,
+  "a", 1, T,
+  "b", 2, F
+)
+```
+## Data frame avanzado: tibble
+
+3. Crear un `tibble` a partir de otro objeto  de las clases `matrix` o data.frame`  con  `as_tibble()`.
+
+```{r}
+data.frame(
+  x = c("a", "b"),
+  y = c(1, 2),
+  z = c(T, F)
+) %>% 
+as_tibble
+```
+## Data frame avanzado: tibble
+
+4. A partir de vectores con nombre con `enframe()`.
+
+```{r}
+c(x = "a", y = "b", z = 1) %>%
+  enframe(name = "x", value = "y")
+```
+## Data frame avanzado tibble
+
+\red{Diferencias entre tibble y data.frame}
+
+* Un tibble nunca cambia el tipo de entrada.
+  - Ya no hay que preocuparse de que los caracteres se conviertan automáticamente en cadenas.
+  
+* Un tibble puede tener columnas que son listas.
+
+* Un tibble puede tener nombres de variables no estándar.
+  - Pueden  empezar por  un número o contener espacios.
+  - Para utilizarlo se refiere a estos en un backtick: `peso en Kg`.
+  
+* Sólo recicla vectores de longitud 1.
+
+* No tiene como atributo nombres de filas `row.names`.
+
+## Data frame avanzado tibble
+
+**Impresión:** Por defecto, `tibble()` imprime sólo las diez primeras filas y todas las columnas que caben en la pantalla, y las clases de las columnas
+
+```{r}
+penguins
+```
+
+
+## Data frame avanzado: tibble
+
+Aquí se ve la diferencia con la clase `data.frame`.
+
+```{r}
+data.frame(penguins)
+```
+
+
+## Data frame avanzado: tibble
+
+En contraste con `data.frame()` que imprime un número extenso de filas, `glimpse` nos da la versión transpuesta de `print()`.
+
+
+```{r}
+penguins %>% glimpse
+```
+
+
+## Data frame avanzado: tibble
+
+**Subconjunto:** El subconjunto de un `tibble` (`[]`) siempre devuelve otro `tibble` y nunca un vector (en contraste con los objetos estándar `data.frame`).
+
+
+```{r}
+data.frame(penguins) %>% .[, "species"] %>% class
+```
+
+
+```{r}
+penguins[, "species"] %>% class
+```
+
+
+## Data frame avanzado: tibble
+
+El subconjunto de un data.frame  busca el nombre de variable más parecido
+
+```{r}
+names(data.frame(penguins))
+head(data.frame(penguins)$spec)
+```
+
+\red{`tibble` no permite la coincidencia parcial, es decir, siempre se debe proporcionar el nombre completo de la columna.}
+
+## Data frame avanzado: tibble
+
+```{r}
+head(penguins$spec)
+```
+
+```{r}
+head(penguins$species)
+```
+
+
+* Las tibbles tienen mejores `Warning` y `Error` ya que dan mejores mensajes de advertencia para solucionar problemas.
+
+
+<!-- * `readr` no lee  datos en formatos que no sean texto, sino almacenados en un archivo de texto (txt, csv, excel) -->
+
+
+
+## Leer datos de texto rectangulares `readr` 
+
+El paquete `readr` proporciona funciones de lectura y escritura para múltiples formatos de archivo diferentes:
+
+* `read_delim()`: archivos delimitados en general
+
+* `read_csv()`: archivos separados por comas
+
+* `read_csv2()`: archivos separados por punto y coma. En la mayoría de los países europeos, Microsoft Excel utiliza `;` como delimitador común
+
+* `read_tsv()`: archivos separados por tabulaciones
+
+* `read_fwf()`: archivos de ancho fijo
+
+* `read_table()`: archivos separados por espacios en blanco
+
+* `read_log()`: archivos de registro web
+
+## Leer datos de texto rectangulares `readr`
+
+* Convenientemente, las funciones `write_*()` funcionan de forma análoga. 
+
+* Se utiliza el paquete `readxl` para archivos de Excel,
+
+* El paquete `haven` para archivos de Stata, SAS y SPSS,
+
+* El paquete `googlesheets4` para Google Sheets 
+
+* El paquete `rvest` para archivos HTML. Paquete de referencia en el contexto de la extracción de datos de la web con `R` 
+
+
+## Leer datos de texto rectangulares `readr` 
+
+Para ilustrar el paquete `readr`, a priori, los datos de los pingüinos se escriben en un archivo csv  utilizando: `write_csv(penguins, archivo = "datos/penguins.csv")`.
+
+
+```{r}
+data <- read_csv(file = "data/penguins.csv")
+```
+
+
+```{r}
+data <- read_csv(file = "data/penguins.csv", col_select = c(species, island))
+```
+
+## Leer datos de texto rectangulares `readr` 
+
+```{r}
+data <- read_csv(file = "./data/penguins.csv",
+                 col_names = paste("Var", 1:8, sep = "_"))
+```
+
+## Leer datos de texto rectangulares `readr` 
+
+```{r}
+data <- read_csv(file = "./data/penguins.csv", skip = 5)
+```
+\red{Nota}: la salida de cualquier función `read_*()` es un objeto `tibble`.
+
+## Leer datos de texto rectangulares `readr` 
+
+* `readr` imprime las especificaciones de las columnas después de la importación. 
+
+* Por defecto, `readr` intenta inferir el tipo de columna (por ejemplo, `int`, `dbl`, `chr`, `fct`, `date`, `lgl`) a partir de las primeras 1.000 filas y analiza las columnas en consecuencia.
+
+* Intentad hacer explícitas las especificaciones de las columnas. Es probable que os familiaricéis más con sus datos y veáis advertencias si algo cambia inesperadamente.
+
+## Leer datos de texto rectangulares `readr` 
+
+```{r, eval=F}
+read_csv(
+  archivo = "./data/penguins.csv",
+  col_types = cols(
+    species = col_character(),
+    año = col_datetime(formato = "%Y"),
+    isla = col_skip())
+  )
+```
+
+
+## Leer datos de texto rectangulares `readr` 
+
+Analizar sólo las primeras 1.000 filas es eficiente, pero puede llevar a conjeturas erróneas:
+
+```{r, eval=F}
+read_csv(file = "./data/penguins.csv", guess_max = 2000)
+```
+
+
+\blue{Nota}: Encuentra más información y funciones de `readr` en  [hoja de trucos](https://raw.githubusercontent.com/rstudio/cheatsheets/master/data-import.pdf).
+
+
+A veces puedes tener problemas al leer datos de texto (tipo carácter): los signos especiales como ö, ä o ü pueden ser codificados de forma extraña como símbolos crípticos.  En esos casos debe controlar la codificación de sus datos en la función read_csv (por ejemplo, UTF-8)
+
+
+
+## Leer datos de texto rectangulares `readr` 
+
+A veces, deseamos dejar de utilizar los archivos `.xlsx` y `.csv` ya que no son capaces de almacenar de forma fiable sus metadatos (por ejemplo, los tipos de datos).
+
+
+Las funciones `write_rds()` y `read_rds()` (son warppers de `writeRDS` y `readRDS` del paquete base de R) proporcionan una buena alternativa para [serializar](https://en.wikipedia.org/wiki/Serialization) tus objetos `R` (por ejemplo, `tibbles`, modelos) y almacenarlos como archivos `.rds`.
+
+Más info sobre [archivos rds](https://mgimond.github.io/ES218/Week02b.html#Export_to_a_Rds_file)
+
+## Leer datos de texto rectangulares `readr` 
+```{r}
+penguins %>% 
+  write_rds(file = "./data/penguins.rds")
+```
+
+```{r}
+penguins <- read_rds(file = "./data/penguins.rds")
+```
+
+<br>
+
+Nota que:
+
+* `write_rds()` solo puede utilizarse para guardar un objeto a la vez,
+
+* un archivo `.rds` cargado debe ser almacenado en una nueva variable, es decir, darle un nuevo nombre,
+
+* `read_rds()` ¡conserva los tipos de datos!

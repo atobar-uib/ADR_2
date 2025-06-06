@@ -1,0 +1,167 @@
+---
+title: "04_tibble"
+output: html_document
+---
+
+class: middle, center, inverse
+layout: false
+
+# 4.2 `tibble`:<br><br>Simple Data Frames
+
+---
+
+background-image: url(https://raw.githubusercontent.com/tidyverse/tibble/master/man/figures/logo.png)
+background-position: 97.5% 2.5%
+background-size: 7.5%
+layout: true
+
+---
+
+## 4.2 `tibble`: Simple Data Frames
+
+`tibble` provides an enhanced data frame object of class `tbl_df`, a so-called `tibble`. A `tibble` can be created in four different ways.
+
+.panelset[
+.panel[.panel-name[tibble()]
+Create a `tibble` from column vectors with `tibble()`.
+```{r}
+tibble(
+  x = c("a", "b"),
+  y = c(1, 2),
+  z = c(T, F)
+)
+```
+]
+.panel[.panel-name[tribble()]
+Create a *transposed* `tibble` row by row with `tribble()`.
+```{r}
+tribble(
+  ~x, ~y,  ~z,
+  "a", 1,  T,
+  "b", 2,  F
+)
+```
+]
+.panel[.panel-name[as_tibble()]
+Create a `tibble` from an existing data frame with `as_tibble()`.
+```{r}
+data.frame(
+  x = c("a", "b"),
+  y = c(1, 2),
+  z = c(T, F)
+) %>% 
+as_tibble
+```
+]
+.panel[.panel-name[enframe()]
+Create a `tibble` from named vectors with `enframe()`.
+```{r}
+c(x = "a", y = "b", z = 1) %>%
+  enframe(name = "x", value = "y")
+```
+]
+]
+
+--
+
+There are three important differences between a `tibble` and a `data.frame` object.
+
+???
+- named vector: i have key-value pairs
+
+---
+
+## 4.2 `tibble`: Simple Data Frames
+
+**Printing:** By default, `tibble()` prints only the first ten rows and all the columns that fit on the screen as well as a description of the data type. This gives you a much more concise view of your data.
+```{r}
+penguins
+```
+
+???
+- you will never again have the problem that `R` takes minutes to print a large data frame entirely to your console (`reached 'max' / getOption("max.print")`)
+
+---
+
+## 4.2 `tibble`: Simple Data Frames
+
+**Printing:** By default, `tibble()` prints only the first ten rows and all the columns that fit on the screen as well as a description of the data type.
+
+.panelset[
+.panel[.panel-name[data.frame()]
+```{r, echo=F}
+options(max.print=40)
+```
+
+```{r}
+data.frame(penguins)
+```
+
+```{r, echo=F}
+options(max.print=1000)
+```
+]
+.panel[.panel-name[tibble() (Option 1)]
+```{r}
+penguins
+```
+]
+.panel[.panel-name[tibble() (Option 2)]
+```{r}
+penguins %>% glimpse
+```
+]
+]
+
+???
+- in contrast to `data.frame()` which prints an extensive number of rows (wh)
+`glimpse` transposed version of `print()`
+ 
+---
+
+## 4.2 `tibble`: Simple Data Frames
+
+**Subsetting:** Subsetting a `tibble` (`[]`) always returns another `tibble` and never a vector (in contrast to standard `data.frame` objects).
+
+.panelset[
+.panel[.panel-name[data.frame()]
+```{r}
+data.frame(penguins) %>% .[,"species"] %>% class
+```
+]
+.panel[.panel-name[tibble()]
+```{r}
+penguins[,"species"] %>% class
+```
+]
+]
+
+---
+
+## 4.2 `tibble`: Simple Data Frames
+
+**Partial Matching:** Subsetting a `tibble` does not allow for partial matching, i.e. you must always provide the whole column name.
+
+.panelset[
+.panel[.panel-name[data.frame()]
+```{r, echo=F}
+options(max.print=40)
+```
+
+```{r}
+data.frame(penguins)$spec
+```
+
+```{r, echo=F}
+options(max.print=1000)
+```
+]
+.panel[.panel-name[tibble()]
+```{r}
+penguins$spec
+```
+]
+]
+
+???
+- also an advantage of tibbles: Giving you better warning messages to confront you with problems early on.

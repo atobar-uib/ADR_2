@@ -1,0 +1,8 @@
+\babel@toc {spanish}{}\relax 
+\beamer@sectionintoc {1}{Introducción}{4}{0}{1}
+\beamer@sectionintoc {2}{Tidy data}{12}{0}{2}
+\beamer@sectionintoc {3}{Magrittr pipes (tuberías)}{20}{0}{3}
+\beamer@sectionintoc {4}{Paquete tibble}{35}{0}{4}
+\beamer@sectionintoc {5}{Tidyr: Ordenar datos desordenados: \texttt {tidyr}}{57}{0}{5}
+\beamer@sectionintoc {6}{\texttt {dplyr}: Una gramática para manipular datos}{76}{0}{6}
+\beamer@sectionintoc {7}{Visualización de datos con \texttt {ggplot2}}{121}{0}{7}

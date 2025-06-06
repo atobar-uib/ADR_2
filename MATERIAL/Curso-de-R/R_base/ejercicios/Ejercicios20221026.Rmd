@@ -1,0 +1,76 @@
+---
+title: "Ejercicios primera parte"
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+header-includes: \usepackage{tcolorbox,enumerate,hyperref}
+                 \newtcolorbox{myquote}{colback=gray!8!white, colframe=red!75!black}
+                 \renewenvironment{quote}{\begin{myquote}}{\end{myquote}}
+---
+
+\newcommand{\m}[1]{\mathbf{#1}}
+\newcommand{\s}[2]{\mathbf{#1}^{(#2)}}
+\newcommand{\pe}[2]{#1^\top #2}
+\newcommand{\w}{\hat{y}}
+
+\newcommand{\vectordos}[2]{\begin{bmatrix}#1\\ #2\end{bmatrix}}
+\newcommand{\vectortres}[3]{\begin{bmatrix}#1\\ #2\\ #3\end{bmatrix}}
+
+
+```{r,echo=FALSE}
+write_matex2 <- function(x) {
+  begin <- "\\begin{bmatrix}"
+  end <- "\\end{bmatrix}"
+  X <-
+    apply(x, 1, function(x) {
+      paste(
+        paste(x, collapse = "&"),
+        "\\\\"
+      )
+    })
+  paste(c(begin, X, end), collapse = "")
+}
+write_matex3 <- function(x) {
+  begin <- "\\begin{vmatrix}"
+  end <- "\\end{vmatrix}"
+  X <-
+    apply(x, 1, function(x) {
+      paste(
+        paste(x, collapse = "&"),
+        "\\\\"
+      )
+    })
+  paste(c(begin, X, end), collapse = "")
+}
+options(scipen=999)
+signe = function(x,texte){
+  y=ifelse(x>0 && x==1,paste("+",texte),ifelse(x>0,paste(paste0("+",x),texte),ifelse(x<0 && x==-1,paste("-",texte),ifelse(x<0,paste(paste0("-",abs(x)),texte),""))))
+  return(y)
+}
+signe.frac = function(num,denom,texte){
+  y=ifelse(num>0,paste(paste0("+\\frac{",num,"}{",denom,"}"),texte),ifelse(num<0,paste(paste0("-\\frac{",abs(num),"}{",denom,"}"),texte),""))
+  return(y)
+}
+
+signe0 = function(x,texte){
+  y=ifelse(x>0 && x==1,texte,ifelse(x>0,paste0(x,texte),ifelse(x<0 && x==-1,paste("-",texte),ifelse(x<0,paste(paste0("-",abs(x)),texte),""))))
+  return(y)
+}
+
+signe0.frac = function(num,denom,texte){
+  y=ifelse(num>0,paste(paste0("\\frac{",num,"}{",denom,"}"),texte),ifelse(num<0,paste(paste0("-\\frac{",abs(num),"}{",denom,"}"),texte),""))
+  return(y)
+}
+```
+
+
+(@) Cargar la tabla de datos `Dades alumnes grau per cohort inici.xls` cargando primero el paquete `readxl` y la función `read_xls`.
+
+(@) A partir de la función `boxplot` realizar un estudio de la evolución del número de matrículas desde el curso académico 2014/15 hasta el 2020/21. Comentar los resultados.
+
+(@) Realizar una tabla de frecuencias de la variable Total créditos superados y adaptados usando la regla de Scott.
+
+(@) Realizar el histograma de frecuencias relativas y frecuencias relativas acumuladas de la tabla anterior.

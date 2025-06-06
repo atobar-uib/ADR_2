@@ -1,0 +1,10 @@
+\frametitle{Una gramática para manipular datos \texttt {dplyr}}
+\phantomsection\label{una-gramuxe1tica-para-manipular-datos-dplyr-20}
+\textbf{La funciones de \texttt{dplyr} son similar a las de consultas
+\texttt{SQL}}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{Imgs/sql-tidyverse} \end{center}
+
+Unas lecciones (son del grupop de Rstudio) de R y SQL
+\href{https://www.rstudio.com/resources/rstudioglobal-2021/the-dynamic-duo-sql-and-r/}{Steves
+(2021)}

@@ -1,0 +1,12 @@
+\frametitle{Extensiones de ggplot}
+\protect\hypertarget{extensiones-de-ggplot-1}{}
+\blue{GGally} contiene extensiones de ggplo2 para datos multivariantes
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(GGally)}
+\FunctionTok{library}\NormalTok{(gapminder)}
+\NormalTok{gapminder }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{country,}\SpecialCharTok{{-}}\NormalTok{year) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggpairs}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{color=}\NormalTok{continent))}
+\end{Highlighting}
+\end{Shaded}
