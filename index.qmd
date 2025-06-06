@@ -1,6 +1,6 @@
 # Prefacio {.unnumbered}
 
-Este  doceumneto es una versión de unas notas para Análisis de Datos con R
+Este  documento es una versión de unas notas para Análisis de Datos con R
 
 Ha sido elaborado con [Quarto](https://quarto.org/)
 
