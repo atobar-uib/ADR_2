@@ -22,485 +22,507 @@
   {
     "objectID": "dia1.html",
     "href": "dia1.html",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "",
     "text": "2.1 ¿Qué aprenderás?",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#qué-aprenderás",
     "href": "dia1.html#qué-aprenderás",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "",
     "text": "Utilizar la interfaz RStudio\n\nConocer los tipos de objetos en R\n\nInstalar y buscar paquetes\n\nEscribir tus propias funciones y scripts en R\n\nRealizar los gráficos más adecuados según el tipo de análisis\n\nGenerar informes y garantizar la repetibilidad de los resultados",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#qué-es-r",
     "href": "dia1.html#qué-es-r",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.2 ¿Qué es R?",
     "text": "2.2 ¿Qué es R?\nR es un software libre y un lenguaje de programación interpretado, enfocado en la estadística y el análisis de datos.\nCaracterísticas:\n\nMultiplataforma\n\nProyecto abierto y colaborativo",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#paquetes-en-r",
     "href": "dia1.html#paquetes-en-r",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.3 Paquetes en R",
     "text": "2.3 Paquetes en R\nLos paquetes son extensiones de R que contienen código, documentación y datos.\n\n2.3.1 Repositorios comunes\n\nCRAN: Red oficial de distribución\ninstall.packages(\"nombre_paquete\")\nBioconductor: Orientado a datos biológicos\nBiocManager::install(c(\"GenomicFeatures\", \"AnnotationDbi\"))\nGitHub: Repositorios sin control de calidad oficial\ndevtools::install_github(\"usuario/repositorio\")",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#instalación-de-r",
     "href": "dia1.html#instalación-de-r",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.4 Instalación de R",
     "text": "2.4 Instalación de R\n\n2.4.1 Windows\nDescargar R para Windows\n\n\n2.4.2 Mac\nDescargar R para Mac (ARM)\n\n\n2.4.3 Linux (Ubuntu/Debian)\nsudo apt update\nsudo apt install r-base r-base-dev -y",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#cómo-usar-r",
     "href": "dia1.html#cómo-usar-r",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.5 ¿Cómo usar R?",
     "text": "2.5 ¿Cómo usar R?\n\n2.5.1 Consola\nInterfaz de línea de comandos sin entorno gráfico.\n\n\n2.5.2 IDE: RStudio\nEntorno integrado de desarrollo para R.\nIncluye:\n\nEditor de código\n\nConsola\n\nHistorial de comandos\n\nExplorador de archivos\n\nPanel de gráficos\n\nGestor de paquetes\n\nAyuda contextual\n\n\n\n2.5.3 Acceso a RStudio vía servidor\n\nURL: https://bioinformatica.idisba.es/rstudio/\n\nUsuario y contraseña: enviados por correo electrónico",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#qué-es-un-proyecto",
     "href": "dia1.html#qué-es-un-proyecto",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.6 ¿Qué es un proyecto?",
     "text": "2.6 ¿Qué es un proyecto?\nUn proyecto en R agrupa scripts, datos y resultados:\n\nEn Linux: ./tablas/nombre_archivo\n\nEn Windows: .    ablas ombre_archivo\n\nGuarda historial de comandos\n\nAlmacena objetos en memoria\n\nPermite control de versiones (GitHub)\n\nPermite replicabilidad con renv",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#crear-un-proyecto",
     "href": "dia1.html#crear-un-proyecto",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.7 Crear un proyecto",
     "text": "2.7 Crear un proyecto\nOpciones:\n\nClonar repositorio desde GitHub\n\nUsar renv para entornos reproducibles\n\nCrear carpetas como:\n\nscripts/\n\npracticas/",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#crear-un-script",
     "href": "dia1.html#crear-un-script",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.8 Crear un script",
     "text": "2.8 Crear un script\nUn script es un conjunto de instrucciones en un archivo .R.\n\nSe escribe código que se ejecutará paso a paso\n\nLos comentarios comienzan con #\n\nEjemplo:\n# Cargar datos\ndatos &lt;- read.csv(\"archivo.csv\")",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#mover-archivos-si-están-en-la-ubicación-incorrecta",
     "href": "dia1.html#mover-archivos-si-están-en-la-ubicación-incorrecta",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.9 Mover archivos si están en la ubicación incorrecta",
     "text": "2.9 Mover archivos si están en la ubicación incorrecta\nPuedes reorganizar manualmente los archivos desde el explorador de RStudio o el sistema operativo.",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#lectura-de-bases-de-datos",
     "href": "dia1.html#lectura-de-bases-de-datos",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.10 Lectura de bases de datos",
     "text": "2.10 Lectura de bases de datos\n\n\n\nFormato\nFunción\nPaquete\n\n\n\n\nCSV\nread.csv()\nutils\n\n\nCSV\nread_csv()\nreadr\n\n\nExcel\nread.xlsx()\nxlsx\n\n\nSPSS\nread_sav()\nhaven\n\n\n\n\n2.10.1 Ejemplo CSV\nlibrary(readr)\ntabla &lt;- read_csv(\"archivo.csv\")\nread.csv(file = \"tabla.csv\", sep = \",\", dec = \".\", header = TRUE)\nParámetros comunes:\n\nsep: Separador (, ; )\n\ndec: Separador decimal (. o ,)\n\nheader: Indica si hay cabecera\n\nskip: Saltar filas\n\ncheck.names: Validar nombres de columnas\n\ncomment.char: Define carácter de comentario (#)",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#excel",
     "href": "dia1.html#excel",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.11 Excel",
     "text": "2.11 Excel\nread.xlsx(file = \"archivo.xlsx\", sheetIndex = 1, header = TRUE)",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#spss",
     "href": "dia1.html#spss",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.12 SPSS",
     "text": "2.12 SPSS\nlibrary(haven)\ndatos &lt;- read_sav(\"archivo.sav\")",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#almacenar-datos-en-r",
     "href": "dia1.html#almacenar-datos-en-r",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.13 Almacenar datos en R",
     "text": "2.13 Almacenar datos en R\ntabla &lt;- read.csv(\"archivo.csv\", sep = \",\", dec = \".\", header = TRUE)\nTambién se puede usar = como operador de asignación.",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#práctica-1",
     "href": "dia1.html#práctica-1",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.14 Práctica 1",
     "text": "2.14 Práctica 1\nCarga las siguientes tablas y asígnales un nombre:\n\n\n\nArchivo\nNombre en R\n\n\n\n\nbalears_aemet_1980_2023.csv\nbalears_aemet\n\n\nCausa_muerte_baleares_1980_2023.xlsx\nmort_balears\n\n\nHealthData.sav\nhealthdata\n\n\nantonia_font.txt\nantonia_font\n\n\nzoo.txt\nzoo\n\n\n\npadro_balears &lt;- read.csv(\"./tablas/padro_balears_INE_1971_2020.csv\", sep = \",\", dec = \".\", header = TRUE, skip = 0)",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#ya-tenemos-datos",
     "href": "dia1.html#ya-tenemos-datos",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.15 ¡Ya tenemos datos!",
     "text": "2.15 ¡Ya tenemos datos!\n\n2.15.1 Visualización básica\nhead(tabla)\ntibble::view(tabla)\ncolnames(tabla)\nprint(tabla)\ncat(\"Mensaje\")\n\n\n2.15.2 Dimensiones y tipos\ndim(tabla)\nlength(variable)\nclass(variable)",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#descripción-básica",
     "href": "dia1.html#descripción-básica",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.16 Descripción básica",
     "text": "2.16 Descripción básica\nstr(tabla)     # estructura\nsummary(tabla) # resumen estadístico\nCon el paquete Hmisc:\nlibrary(Hmisc)\ndescribe(tabla)\n\n2.16.1 Funciones de estadística descriptiva\n\n\n\nFunción\nDescripción\n\n\n\n\nmean()\nMedia\n\n\nmedian()\nMediana\n\n\ntable()\nTabla de frecuencias\n\n\nrange()\nRango\n\n\nvar()\nVarianza\n\n\nsd()\nDesviación estándar",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#operadores-y-funciones-básicas",
     "href": "dia1.html#operadores-y-funciones-básicas",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.17 Operadores y funciones básicas",
     "text": "2.17 Operadores y funciones básicas\n\n\n\nOperador\nSignificado\n\n\n\n\n+\nSuma\n\n\n-\nResta\n\n\n*\nMultiplicación\n\n\n/\nDivisión\n\n\n^\nPotencia\n\n\n==\nIgual\n\n\n&lt;, &lt;=\nMenor, menor igual\n\n\n&gt;, &gt;=\nMayor, mayor igual\n\n\n\nFunciones comunes:\n\nmin(), max()\n\nlength()\n\nsum()\n\nsort()\n\ngrep(), gsub(), strsplit()\n\npaste()\n\nprint(), cat()",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#consejos-prácticos",
     "href": "dia1.html#consejos-prácticos",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.18 Consejos prácticos",
     "text": "2.18 Consejos prácticos\n\nSiempre comenta tu código para entender qué hace cada bloque.\nGuarda tus scripts con nombres significativos: por ejemplo, importar_datos.R es mejor que script1.R.\nUsa View(nombre_tabla) en RStudio para explorar tablas interactivamente.",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia1.html#ejemplo-completo-importar-y-explorar-una-tabla-csv",
     "href": "dia1.html#ejemplo-completo-importar-y-explorar-una-tabla-csv",
-    "title": "2  Día 1",
+    "title": "2  Día 1: Introducción a R y Rstudio",
     "section": "2.19 Ejemplo completo: importar y explorar una tabla CSV",
     "text": "2.19 Ejemplo completo: importar y explorar una tabla CSV\n# Instalar el paquete si no lo tienes\ninstall.packages(\"readr\")\n\n# Cargar el paquete\nlibrary(readr)\n\n# Leer una tabla CSV\ndatos &lt;- read_csv(\"datos_salud.csv\")\n\n# Ver las primeras filas\nhead(datos)\n\n# Obtener la estructura de la tabla\nstr(datos)\n\n# Ver un resumen estadístico\nsummary(datos)\n\n# Mostrar los nombres de columnas\ncolnames(datos)\nEste flujo te permitirá empezar a trabajar con datos reales de forma sencilla y ordenada.",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Día 1: Introducción a R y Rstudio</span>"
     ]
   },
   {
     "objectID": "dia2.html",
     "href": "dia2.html",
-    "title": "3  Día 2",
+    "title": "3  Día 2: Exploración de datos",
     "section": "",
     "text": "3.1 Práctica 2",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2: Exploración de datos</span>"
     ]
   },
   {
     "objectID": "dia2.html#práctica-2",
     "href": "dia2.html#práctica-2",
-    "title": "3  Día 2",
+    "title": "3  Día 2: Exploración de datos",
     "section": "",
     "text": "Tabla antonia_font:\n\nVisualiza la canción número 15.\nUsa grep para buscar la palabra “lluna” en la columna lletra. ¿Cuántas canciones la contienen?\n\nTabla healthdata:\n\nMuestra los nombres de las columnas.\nUsa class() para indicar el tipo de cada columna.\n\nTabla balears_aemet:\n\nVisualiza las primeras 15 filas.\nUsa summary() y describe() para describir los datos.\n¿Hay alguna variable mal introducida?",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2: Exploración de datos</span>"
     ]
   },
   {
     "objectID": "dia2.html#tipos-de-objetos-en-r",
     "href": "dia2.html#tipos-de-objetos-en-r",
-    "title": "3  Día 2",
+    "title": "3  Día 2: Exploración de datos",
     "section": "3.2 Tipos de objetos en R",
     "text": "3.2 Tipos de objetos en R\n\n3.2.1 Vectores\n\nnumeric / double: valores numéricos decimales.\ninteger: números enteros.\ncharacter: cadenas de texto.\nlogical: valores TRUE o FALSE.\nDate: fechas (usando as.Date()).\n\n\n\n3.2.2 Matrices y listas\n\nMatrices: estructuras bidimensionales homogéneas (as.matrix()).\nListas: estructuras que pueden contener tipos distintos (list()).\n\n\n\n3.2.3 Data Frames\n\nTablas bidimensionales.\nCada columna puede tener un tipo distinto.",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2: Exploración de datos</span>"
     ]
   },
   {
     "objectID": "dia2.html#práctica-3",
     "href": "dia2.html#práctica-3",
-    "title": "3  Día 2",
+    "title": "3  Día 2: Exploración de datos",
     "section": "3.3 Práctica 3",
     "text": "3.3 Práctica 3\n\nIdentifica el tipo de balears_aemet$fecha y balears_aemet$prec, y corrígelo.\nCalcula el índice de masa corporal (IMC): Weight / Height^2.\nCalcula la ráfaga mínima y máxima en “PALMA, PUERTO”.",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2: Exploración de datos</span>"
     ]
   },
   {
     "objectID": "dia2.html#manipulación-de-tablas-con-dplyr",
     "href": "dia2.html#manipulación-de-tablas-con-dplyr",
-    "title": "3  Día 2",
+    "title": "3  Día 2: Exploración de datos",
     "section": "3.4 Manipulación de tablas con dplyr",
     "text": "3.4 Manipulación de tablas con dplyr\nlibrary(dplyr)\n\ndata %&gt;%\n  mutate(nueva_variable = ...) %&gt;%\n  select(...) %&gt;%\n  filter(...) %&gt;%\n  summarize(...) %&gt;%\n  arrange(...)",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2: Exploración de datos</span>"
     ]
   },
   {
     "objectID": "dia2.html#práctica-4",
     "href": "dia2.html#práctica-4",
-    "title": "3  Día 2",
+    "title": "3  Día 2: Exploración de datos",
     "section": "3.5 Práctica 4",
     "text": "3.5 Práctica 4\nCrear la variable vent_tipus en balears_aemet: - fluix: &lt; 5.83 m/s - moderats: 5.83–11.38 m/s - forts: 11.39–19.71 m/s - molt_forts: 19.72–33.33 m/s - huracanats: &gt; 33.33 m/s\nContar cuántos días hay de cada tipo de viento por estación (Palma, Eivissa, Menorca).",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2: Exploración de datos</span>"
     ]
   },
   {
     "objectID": "dia2.html#ejemplo-clasificar-valores-lógicos-y-tipos",
     "href": "dia2.html#ejemplo-clasificar-valores-lógicos-y-tipos",
-    "title": "3  Día 2",
+    "title": "3  Día 2: Exploración de datos",
     "section": "3.6 Ejemplo: Clasificar valores lógicos y tipos",
     "text": "3.6 Ejemplo: Clasificar valores lógicos y tipos\n# Supongamos que 'antonia_font' tiene una columna 'lletra'\n\n# Buscar canciones que mencionan \"lluna\"\ngrep(\"lluna\", antonia_font$lletra, ignore.case = TRUE)\n\n# Comprobar tipo de variable\nclass(healthdata$Age)\nis.numeric(healthdata$Age)\n\n# Convertir fecha\nbalears_aemet$fecha &lt;- as.Date(balears_aemet$fecha, format = \"%Y-%m-%d\")",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2: Exploración de datos</span>"
     ]
   },
   {
     "objectID": "dia2.html#buenas-prácticas",
     "href": "dia2.html#buenas-prácticas",
-    "title": "3  Día 2",
+    "title": "3  Día 2: Exploración de datos",
     "section": "3.7 Buenas prácticas",
     "text": "3.7 Buenas prácticas\n\nRevisa siempre los tipos de datos antes de analizarlos.\nUsa str() y summary() como herramientas diagnósticas.\nCuando manipules datos meteorológicos o clínicos, asegúrate de trabajar con unidades homogéneas.",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2: Exploración de datos</span>"
     ]
   },
   {
     "objectID": "dia2.html#ejemplo-con-dplyr",
     "href": "dia2.html#ejemplo-con-dplyr",
-    "title": "3  Día 2",
+    "title": "3  Día 2: Exploración de datos",
     "section": "3.8 Ejemplo con dplyr",
     "text": "3.8 Ejemplo con dplyr\nlibrary(dplyr)\n\n# Calcular IMC\nhealthdata &lt;- healthdata %&gt;%\n  mutate(BMI = Weight / (Height^2))\n\n# Ver los valores máximos de racha por ubicación\nbalears_aemet %&gt;%\n  filter(nombre == \"PALMA, PUERTO\") %&gt;%\n  summarize(min_racha = min(racha, na.rm = TRUE),\n            max_racha = max(racha, na.rm = TRUE))",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Día 2: Exploración de datos</span>"
     ]
   },
   {
     "objectID": "dia3.html",
     "href": "dia3.html",
-    "title": "4  Día 3",
+    "title": "4  Día 3: Estadística básica",
     "section": "",
     "text": "4.1 Manipulación avanzada de tablas",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Día 3</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Día 3: Estadística básica</span>"
     ]
   },
   {
     "objectID": "dia3.html#manipulación-avanzada-de-tablas",
     "href": "dia3.html#manipulación-avanzada-de-tablas",
-    "title": "4  Día 3",
+    "title": "4  Día 3: Estadística básica",
     "section": "",
     "text": "4.1.1 Funciones dplyr:\n\nmutate(): añade variables nuevas.\nselect(): selecciona columnas.\ndistinct(): elimina duplicados.\nfilter(): filtra filas.\nsummarize(): resumen estadístico por grupo.\n\n\n\n4.1.2 Ejemplo:\nbalears_aemet %&gt;%\n  group_by(nombre) %&gt;%\n  summarize(COR = cor(presMin, prec_num, use=\"complete.obs\"))",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Día 3</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Día 3: Estadística básica</span>"
     ]
   },
   {
     "objectID": "dia3.html#clasificación-de-precipitaciones",
     "href": "dia3.html#clasificación-de-precipitaciones",
-    "title": "4  Día 3",
+    "title": "4  Día 3: Estadística básica",
     "section": "4.2 Clasificación de precipitaciones",
     "text": "4.2 Clasificación de precipitaciones\nmutate(prec_cat = ifelse(prec &lt;= 2, \"débil\",\n                  ifelse(prec &lt;= 15, \"moderada\",\n                  ifelse(prec &lt;= 30, \"fuertes\",\n                  ifelse(prec &lt;= 60, \"muy_fuertes\", \"torrenciales\")))))",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Día 3</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Día 3: Estadística básica</span>"
     ]
   },
   {
     "objectID": "dia3.html#introducción-a-gráficos-con-ggplot2",
     "href": "dia3.html#introducción-a-gráficos-con-ggplot2",
-    "title": "4  Día 3",
+    "title": "4  Día 3: Estadística básica",
     "section": "4.3 Introducción a gráficos con ggplot2",
     "text": "4.3 Introducción a gráficos con ggplot2\n\n4.3.1 Tipos de gráficos:\n\nUnivariantes: histogramas, boxplot\nBivariantes: dispersión, líneas\nCategóricos: barras\nCombinados: boxplot por categoría, columnas\n\n\n\n4.3.2 Estructura:\nggplot(data, aes(x, y)) + geom_point()",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Día 3</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Día 3: Estadística básica</span>"
     ]
   },
   {
     "objectID": "dia3.html#práctica-5",
     "href": "dia3.html#práctica-5",
-    "title": "4  Día 3",
+    "title": "4  Día 3: Estadística básica",
     "section": "4.4 Práctica 5",
     "text": "4.4 Práctica 5\n\nRepresentar Age (barras), Weight vs Waist (puntos), Age por género (boxplot), Weight (histograma).\nPara antoniafont: barras por disco, color y tema personalizado.",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Día 3</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Día 3: Estadística básica</span>"
     ]
   },
   {
     "objectID": "dia3.html#ejemplo-visual-completo",
     "href": "dia3.html#ejemplo-visual-completo",
-    "title": "4  Día 3",
+    "title": "4  Día 3: Estadística básica",
     "section": "4.5 Ejemplo visual completo",
     "text": "4.5 Ejemplo visual completo\nlibrary(ggplot2)\n\n# Dispersión: Peso vs Cintura\nggplot(healthdata, aes(x = Weight, y = Waist, color = Gender)) +\n  geom_point() +\n  theme_minimal() +\n  labs(title = \"Relación entre Peso y Cintura\",\n       x = \"Peso (kg)\",\n       y = \"Cintura (cm)\")",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Día 3</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Día 3: Estadística básica</span>"
     ]
   },
   {
     "objectID": "dia3.html#consejo",
     "href": "dia3.html#consejo",
-    "title": "4  Día 3",
+    "title": "4  Día 3: Estadística básica",
     "section": "4.6 Consejo",
     "text": "4.6 Consejo\nCuando hagas gráficos: - Usa theme_minimal() o theme_classic() para una apariencia profesional. - Siempre nombra los ejes y agrega títulos claros. - Usa facet_wrap(~ variable) si necesitas comparar subgrupos.",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Día 3</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Día 3: Estadística básica</span>"
     ]
   },
   {
     "objectID": "dia4.html",
     "href": "dia4.html",
-    "title": "5  Día 4",
+    "title": "5  Día 4: Uso de quarto/Rmarkdown",
     "section": "",
     "text": "5.1 Personalización de gráficos",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4: Uso de quarto/Rmarkdown</span>"
     ]
   },
   {
     "objectID": "dia4.html#personalización-de-gráficos",
     "href": "dia4.html#personalización-de-gráficos",
-    "title": "5  Día 4",
+    "title": "5  Día 4: Uso de quarto/Rmarkdown",
     "section": "",
     "text": "5.1.1 Escalas:\nscale_x_continuous(name = \"Eje X\", limits = c(25,30))\nscale_y_continuous(name = \"Eje Y\", breaks = c(15,20,25), labels = c(\"quince\", \"veinte\", \"veinticinco\"))\nscale_color_manual(values = c(\"red\", \"blue\"))\nscale_fill_manual(values = c(\"blue\", \"red\"))\n\n\n5.1.2 Coordenadas y Zoom:\ncoord_cartesian(ylim = c(30, 35), xlim = c(2,4))\n\n\n5.1.3 Facetas y temas:\n\nfacet_wrap(), facet_grid()\ntheme_classic(), theme_bw()…",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4: Uso de quarto/Rmarkdown</span>"
     ]
   },
   {
     "objectID": "dia4.html#exportación",
     "href": "dia4.html#exportación",
-    "title": "5  Día 4",
+    "title": "5  Día 4: Uso de quarto/Rmarkdown",
     "section": "5.2 Exportación",
     "text": "5.2 Exportación\nsave(objeto, file=\"objeto.RData\")\nwrite.csv(tabla, \"tabla.csv\")\npng(\"grafica.png\")\n# plot code\ndev.off()",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4: Uso de quarto/Rmarkdown</span>"
     ]
   },
   {
     "objectID": "dia4.html#introducción-a-la-estadística",
     "href": "dia4.html#introducción-a-la-estadística",
-    "title": "5  Día 4",
+    "title": "5  Día 4: Uso de quarto/Rmarkdown",
     "section": "5.3 Introducción a la estadística",
     "text": "5.3 Introducción a la estadística\nUso del paquete compareGroups:\nresultado &lt;- compareGroups(var1 ~ var2, data = tabla)\ncreateTable(resultado)",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4: Uso de quarto/Rmarkdown</span>"
     ]
   },
   {
     "objectID": "dia4.html#quarto-y-rmarkdown",
     "href": "dia4.html#quarto-y-rmarkdown",
-    "title": "5  Día 4",
+    "title": "5  Día 4: Uso de quarto/Rmarkdown",
     "section": "5.4 Quarto y RMarkdown",
     "text": "5.4 Quarto y RMarkdown\n\nTransparencia y reproducibilidad científica\nIntegración con RStudio\nMúltiples formatos: HTML, PDF, Word\nAutomatización de informes\n\n\n5.4.1 YAML de ejemplo:\n---\ntitle: \"Análisis de tabla\"\nauthor: \"Tu nombre\"\ndate: today\nformat:\n  html:\n    theme: cosmo\n    toc: true\n    echo: false\n---",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4: Uso de quarto/Rmarkdown</span>"
     ]
   },
   {
     "objectID": "dia4.html#práctica-6-y-7",
     "href": "dia4.html#práctica-6-y-7",
-    "title": "5  Día 4",
+    "title": "5  Día 4: Uso de quarto/Rmarkdown",
     "section": "5.5 Práctica 6 y 7",
     "text": "5.5 Práctica 6 y 7\n\nCrear documento Quarto con análisis compareGroups por Gender.\nCrear y guardar una gráfica.\nInsertar gráfica guardada.\nPráctica 7: Informe usando StatRadar.",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4: Uso de quarto/Rmarkdown</span>"
     ]
   },
   {
     "objectID": "dia4.html#ejemplo-completo-con-escalas-etiquetas-y-exportación",
     "href": "dia4.html#ejemplo-completo-con-escalas-etiquetas-y-exportación",
-    "title": "5  Día 4",
+    "title": "5  Día 4: Uso de quarto/Rmarkdown",
     "section": "5.6 Ejemplo completo con escalas, etiquetas y exportación",
     "text": "5.6 Ejemplo completo con escalas, etiquetas y exportación\nlibrary(ggplot2)\n\ngrafica &lt;- ggplot(healthdata, aes(x = Weight, y = Waist, color = Gender)) +\n  geom_point() +\n  scale_x_continuous(name = \"Peso (kg)\", limits = c(50, 100)) +\n  scale_y_continuous(name = \"Cintura (cm)\", breaks = seq(60, 120, 10)) +\n  labs(title = \"Relación Peso-Cintura\", subtitle = \"Datos por género\") +\n  theme_classic()\n\n# Guardar la gráfica\npng(\"peso_cintura.png\", width = 800, height = 600)\nprint(grafica)\ndev.off()",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4: Uso de quarto/Rmarkdown</span>"
     ]
   },
   {
     "objectID": "dia4.html#quarto-y-reproducibilidad",
     "href": "dia4.html#quarto-y-reproducibilidad",
-    "title": "5  Día 4",
+    "title": "5  Día 4: Uso de quarto/Rmarkdown",
     "section": "5.7 Quarto y reproducibilidad",
     "text": "5.7 Quarto y reproducibilidad\nRecuerda que los archivos .qmd pueden contener texto + código + resultados. Esto hace que tu análisis sea transparente, reproducible y fácil de compartir.",
     "crumbs": [
       "Microcredito I",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Día 4: Uso de quarto/Rmarkdown</span>"
+    ]
+  },
+  {
+    "objectID": "dia5.html",
+    "href": "dia5.html",
+    "title": "6  Representación gráfica",
+    "section": "",
+    "text": "6.1 Representación con tidyverse y Shiny?",
+    "crumbs": [
+      "Microcredito I",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Representación gráfica</span>"
+    ]
+  },
+  {
+    "objectID": "dia5.html#representación-con-tidyverse-y-shiny",
+    "href": "dia5.html#representación-con-tidyverse-y-shiny",
+    "title": "6  Representación gráfica",
+    "section": "",
+    "text": "6.1.1 Presentación de resultados\nBLABL",
+    "crumbs": [
+      "Microcredito I",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Representación gráfica</span>"
     ]
   }
 ]

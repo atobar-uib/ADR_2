@@ -1,0 +1,7 @@
+# Representación gráfica
+
+## Representación con tidyverse y Shiny?
+
+### Presentación de resultados
+
+BLABL

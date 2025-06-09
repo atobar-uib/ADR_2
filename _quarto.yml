@@ -17,6 +17,7 @@ book:
         - dia2.qmd
         - dia3.qmd
         - dia4.qmd
+        - dia5.qmd
         #- 01_Modulo_R.qmd
         #- 02_Modulo_Exploracion.qmd
         #- 03_Modulo_Estadistica.qmd

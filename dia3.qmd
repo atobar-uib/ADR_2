@@ -1,18 +1,18 @@
-# Día 3
+# Día 3: Estadística básica
 
 ## Manipulación avanzada de tablas
 
 ### Funciones `dplyr`:
 
-- `mutate()`: añade variables nuevas.
-- `select()`: selecciona columnas.
-- `distinct()`: elimina duplicados.
-- `filter()`: filtra filas.
-- `summarize()`: resumen estadístico por grupo.
+-   `mutate()`: añade variables nuevas.
+-   `select()`: selecciona columnas.
+-   `distinct()`: elimina duplicados.
+-   `filter()`: filtra filas.
+-   `summarize()`: resumen estadístico por grupo.
 
 ### Ejemplo:
 
-```r
+``` r
 balears_aemet %>%
   group_by(nombre) %>%
   summarize(COR = cor(presMin, prec_num, use="complete.obs"))
@@ -20,7 +20,7 @@ balears_aemet %>%
 
 ## Clasificación de precipitaciones
 
-```r
+``` r
 mutate(prec_cat = ifelse(prec <= 2, "débil",
                   ifelse(prec <= 15, "moderada",
                   ifelse(prec <= 30, "fuertes",
@@ -31,28 +31,27 @@ mutate(prec_cat = ifelse(prec <= 2, "débil",
 
 ### Tipos de gráficos:
 
-- Univariantes: histogramas, boxplot
-- Bivariantes: dispersión, líneas
-- Categóricos: barras
-- Combinados: boxplot por categoría, columnas
+-   Univariantes: histogramas, boxplot
+-   Bivariantes: dispersión, líneas
+-   Categóricos: barras
+-   Combinados: boxplot por categoría, columnas
 
 ### Estructura:
 
-```r
+``` r
 ggplot(data, aes(x, y)) + geom_point()
 ```
 
 ## Práctica 5
 
-- Representar `Age` (barras), `Weight` vs `Waist` (puntos), `Age` por género (boxplot), `Weight` (histograma).
-- Para `antoniafont`: barras por disco, color y tema personalizado.
+-   Representar `Age` (barras), `Weight` vs `Waist` (puntos), `Age` por género (boxplot), `Weight` (histograma).
+-   Para `antoniafont`: barras por disco, color y tema personalizado.
 
-
----
+------------------------------------------------------------------------
 
 ## Ejemplo visual completo
 
-```r
+``` r
 library(ggplot2)
 
 # Dispersión: Peso vs Cintura
@@ -66,8 +65,4 @@ ggplot(healthdata, aes(x = Weight, y = Waist, color = Gender)) +
 
 ## Consejo
 
-Cuando hagas gráficos:
-- Usa `theme_minimal()` o `theme_classic()` para una apariencia profesional.
-- Siempre nombra los ejes y agrega títulos claros.
-- Usa `facet_wrap(~ variable)` si necesitas comparar subgrupos.
-
+Cuando hagas gráficos: - Usa `theme_minimal()` o `theme_classic()` para una apariencia profesional. - Siempre nombra los ejes y agrega títulos claros. - Usa `facet_wrap(~ variable)` si necesitas comparar subgrupos.

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Día 4: Uso de quarto/Rmarkdown – Análiside Datos con R y Python</title>
+<title>6&nbsp; Representación gráfica – Análiside Datos con R y Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./dia5.html" rel="next">
-<link href="./dia3.html" rel="prev">
+<link href="./dia4.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -118,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./MicrocreditoI.html">Microcredito I</a></li><li class="breadcrumb-item"><a href="./dia4.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Día 4: Uso de quarto/Rmarkdown</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./MicrocreditoI.html">Microcredito I</a></li><li class="breadcrumb-item"><a href="./dia5.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Representación gráfica</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -187,13 +152,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dia4.html" class="sidebar-item-text sidebar-link active">
+  <a href="./dia4.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Día 4: Uso de quarto/Rmarkdown</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dia5.html" class="sidebar-item-text sidebar-link">
+  <a href="./dia5.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Representación gráfica</span></span></a>
   </div>
 </li>
@@ -209,30 +174,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#personalización-de-gráficos" id="toc-personalización-de-gráficos" class="nav-link active" data-scroll-target="#personalización-de-gráficos"><span class="header-section-number">5.1</span> Personalización de gráficos</a>
+  <li><a href="#representación-con-tidyverse-y-shiny" id="toc-representación-con-tidyverse-y-shiny" class="nav-link active" data-scroll-target="#representación-con-tidyverse-y-shiny"><span class="header-section-number">6.1</span> Representación con tidyverse y Shiny?</a>
   <ul class="collapse">
-  <li><a href="#escalas" id="toc-escalas" class="nav-link" data-scroll-target="#escalas"><span class="header-section-number">5.1.1</span> Escalas:</a></li>
-  <li><a href="#coordenadas-y-zoom" id="toc-coordenadas-y-zoom" class="nav-link" data-scroll-target="#coordenadas-y-zoom"><span class="header-section-number">5.1.2</span> Coordenadas y Zoom:</a></li>
-  <li><a href="#facetas-y-temas" id="toc-facetas-y-temas" class="nav-link" data-scroll-target="#facetas-y-temas"><span class="header-section-number">5.1.3</span> Facetas y temas:</a></li>
+  <li><a href="#presentación-de-resultados" id="toc-presentación-de-resultados" class="nav-link" data-scroll-target="#presentación-de-resultados"><span class="header-section-number">6.1.1</span> Presentación de resultados</a></li>
   </ul></li>
-  <li><a href="#exportación" id="toc-exportación" class="nav-link" data-scroll-target="#exportación"><span class="header-section-number">5.2</span> Exportación</a></li>
-  <li><a href="#introducción-a-la-estadística" id="toc-introducción-a-la-estadística" class="nav-link" data-scroll-target="#introducción-a-la-estadística"><span class="header-section-number">5.3</span> Introducción a la estadística</a></li>
-  <li><a href="#quarto-y-rmarkdown" id="toc-quarto-y-rmarkdown" class="nav-link" data-scroll-target="#quarto-y-rmarkdown"><span class="header-section-number">5.4</span> Quarto y RMarkdown</a>
-  <ul class="collapse">
-  <li><a href="#yaml-de-ejemplo" id="toc-yaml-de-ejemplo" class="nav-link" data-scroll-target="#yaml-de-ejemplo"><span class="header-section-number">5.4.1</span> YAML de ejemplo:</a></li>
-  </ul></li>
-  <li><a href="#práctica-6-y-7" id="toc-práctica-6-y-7" class="nav-link" data-scroll-target="#práctica-6-y-7"><span class="header-section-number">5.5</span> Práctica 6 y 7</a></li>
-  <li><a href="#ejemplo-completo-con-escalas-etiquetas-y-exportación" id="toc-ejemplo-completo-con-escalas-etiquetas-y-exportación" class="nav-link" data-scroll-target="#ejemplo-completo-con-escalas-etiquetas-y-exportación"><span class="header-section-number">5.6</span> Ejemplo completo con escalas, etiquetas y exportación</a></li>
-  <li><a href="#quarto-y-reproducibilidad" id="toc-quarto-y-reproducibilidad" class="nav-link" data-scroll-target="#quarto-y-reproducibilidad"><span class="header-section-number">5.7</span> Quarto y reproducibilidad</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./MicrocreditoI.html">Microcredito I</a></li><li class="breadcrumb-item"><a href="./dia4.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Día 4: Uso de quarto/Rmarkdown</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./MicrocreditoI.html">Microcredito I</a></li><li class="breadcrumb-item"><a href="./dia5.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Representación gráfica</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Día 4: Uso de quarto/Rmarkdown</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Representación gráfica</span></h1>
 </div>
 
 
@@ -249,94 +203,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="personalización-de-gráficos" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="personalización-de-gráficos"><span class="header-section-number">5.1</span> Personalización de gráficos</h2>
-<section id="escalas" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="escalas"><span class="header-section-number">5.1.1</span> Escalas:</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Eje X"</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">25</span>,<span class="dv">30</span>))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Eje Y"</span>, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">25</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"quince"</span>, <span class="st">"veinte"</span>, <span class="st">"veinticinco"</span>))</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"blue"</span>))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="coordenadas-y-zoom" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="coordenadas-y-zoom"><span class="header-section-number">5.1.2</span> Coordenadas y Zoom:</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">35</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="facetas-y-temas" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="facetas-y-temas"><span class="header-section-number">5.1.3</span> Facetas y temas:</h3>
-<ul>
-<li><code>facet_wrap()</code>, <code>facet_grid()</code></li>
-<li><code>theme_classic()</code>, <code>theme_bw()</code>…</li>
-</ul>
-</section>
-</section>
-<section id="exportación" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="exportación"><span class="header-section-number">5.2</span> Exportación</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(objeto, <span class="at">file=</span><span class="st">"objeto.RData"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(tabla, <span class="st">"tabla.csv"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="st">"grafica.png"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plot code</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="introducción-a-la-estadística" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="introducción-a-la-estadística"><span class="header-section-number">5.3</span> Introducción a la estadística</h2>
-<p>Uso del paquete <code>compareGroups</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">compareGroups</span>(var1 <span class="sc">~</span> var2, <span class="at">data =</span> tabla)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">createTable</span>(resultado)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="quarto-y-rmarkdown" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="quarto-y-rmarkdown"><span class="header-section-number">5.4</span> Quarto y RMarkdown</h2>
-<ul>
-<li>Transparencia y reproducibilidad científica</li>
-<li>Integración con RStudio</li>
-<li>Múltiples formatos: HTML, PDF, Word</li>
-<li>Automatización de informes</li>
-</ul>
-<section id="yaml-de-ejemplo" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="yaml-de-ejemplo"><span class="header-section-number">5.4.1</span> YAML de ejemplo:</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Análisis de tabla"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Tu nombre"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> today</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="práctica-6-y-7" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="práctica-6-y-7"><span class="header-section-number">5.5</span> Práctica 6 y 7</h2>
-<ul>
-<li>Crear documento Quarto con análisis <code>compareGroups</code> por <code>Gender</code>.</li>
-<li>Crear y guardar una gráfica.</li>
-<li>Insertar gráfica guardada.</li>
-<li>Práctica 7: Informe usando StatRadar.</li>
-</ul>
-<hr>
-</section>
-<section id="ejemplo-completo-con-escalas-etiquetas-y-exportación" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="ejemplo-completo-con-escalas-etiquetas-y-exportación"><span class="header-section-number">5.6</span> Ejemplo completo con escalas, etiquetas y exportación</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>grafica <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(healthdata, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Waist, <span class="at">color =</span> Gender)) <span class="sc">+</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Peso (kg)"</span>, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Cintura (cm)"</span>, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">60</span>, <span class="dv">120</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relación Peso-Cintura"</span>, <span class="at">subtitle =</span> <span class="st">"Datos por género"</span>) <span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Guardar la gráfica</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">png</span>(<span class="st">"peso_cintura.png"</span>, <span class="at">width =</span> <span class="dv">800</span>, <span class="at">height =</span> <span class="dv">600</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(grafica)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="quarto-y-reproducibilidad" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="quarto-y-reproducibilidad"><span class="header-section-number">5.7</span> Quarto y reproducibilidad</h2>
-<p>Recuerda que los archivos <code>.qmd</code> pueden contener texto + código + resultados. Esto hace que tu análisis sea transparente, reproducible y fácil de compartir.</p>
+<section id="representación-con-tidyverse-y-shiny" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="representación-con-tidyverse-y-shiny"><span class="header-section-number">6.1</span> Representación con tidyverse y Shiny?</h2>
+<section id="presentación-de-resultados" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="presentación-de-resultados"><span class="header-section-number">6.1.1</span> Presentación de resultados</h3>
+<p>BLABL</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -906,14 +780,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./dia3.html" class="pagination-link" aria-label="Día 3: Estadística básica">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Día 3: Estadística básica</span></span>
+      <a href="./dia4.html" class="pagination-link" aria-label="Día 4: Uso de quarto/Rmarkdown">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Día 4: Uso de quarto/Rmarkdown</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./dia5.html" class="pagination-link" aria-label="Representación gráfica">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Representación gráfica</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
