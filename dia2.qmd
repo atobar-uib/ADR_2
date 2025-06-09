@@ -1,0 +1,104 @@
+# Día 2
+
+## Práctica 2
+
+1. Tabla `antonia_font`:
+   - Visualiza la canción número 15.
+   - Usa `grep` para buscar la palabra "lluna" en la columna `lletra`. ¿Cuántas canciones la contienen?
+
+2. Tabla `healthdata`:
+   - Muestra los nombres de las columnas.
+   - Usa `class()` para indicar el tipo de cada columna.
+
+3. Tabla `balears_aemet`:
+   - Visualiza las primeras 15 filas.
+   - Usa `summary()` y `describe()` para describir los datos.
+   - ¿Hay alguna variable mal introducida?
+
+## Tipos de objetos en R
+
+### Vectores
+- `numeric` / `double`: valores numéricos decimales.
+- `integer`: números enteros.
+- `character`: cadenas de texto.
+- `logical`: valores `TRUE` o `FALSE`.
+- `Date`: fechas (usando `as.Date()`).
+
+### Matrices y listas
+- Matrices: estructuras bidimensionales homogéneas (`as.matrix()`).
+- Listas: estructuras que pueden contener tipos distintos (`list()`).
+
+### Data Frames
+- Tablas bidimensionales.
+- Cada columna puede tener un tipo distinto.
+
+## Práctica 3
+
+1. Identifica el tipo de `balears_aemet$fecha` y `balears_aemet$prec`, y corrígelo.
+2. Calcula el índice de masa corporal (IMC): `Weight / Height^2`.
+3. Calcula la ráfaga mínima y máxima en "PALMA, PUERTO".
+
+## Manipulación de tablas con `dplyr`
+
+```r
+library(dplyr)
+
+data %>%
+  mutate(nueva_variable = ...) %>%
+  select(...) %>%
+  filter(...) %>%
+  summarize(...) %>%
+  arrange(...)
+```
+
+## Práctica 4
+
+Crear la variable `vent_tipus` en `balears_aemet`:
+- fluix: < 5.83 m/s
+- moderats: 5.83–11.38 m/s
+- forts: 11.39–19.71 m/s
+- molt_forts: 19.72–33.33 m/s
+- huracanats: > 33.33 m/s
+
+Contar cuántos días hay de cada tipo de viento por estación (Palma, Eivissa, Menorca).
+
+
+---
+
+## Ejemplo: Clasificar valores lógicos y tipos
+
+```r
+# Supongamos que 'antonia_font' tiene una columna 'lletra'
+
+# Buscar canciones que mencionan "lluna"
+grep("lluna", antonia_font$lletra, ignore.case = TRUE)
+
+# Comprobar tipo de variable
+class(healthdata$Age)
+is.numeric(healthdata$Age)
+
+# Convertir fecha
+balears_aemet$fecha <- as.Date(balears_aemet$fecha, format = "%Y-%m-%d")
+```
+
+## Buenas prácticas
+
+- Revisa siempre los tipos de datos antes de analizarlos.
+- Usa `str()` y `summary()` como herramientas diagnósticas.
+- Cuando manipules datos meteorológicos o clínicos, asegúrate de trabajar con unidades homogéneas.
+
+## Ejemplo con `dplyr`
+
+```r
+library(dplyr)
+
+# Calcular IMC
+healthdata <- healthdata %>%
+  mutate(BMI = Weight / (Height^2))
+
+# Ver los valores máximos de racha por ubicación
+balears_aemet %>%
+  filter(nombre == "PALMA, PUERTO") %>%
+  summarize(min_racha = min(racha, na.rm = TRUE),
+            max_racha = max(racha, na.rm = TRUE))
+```

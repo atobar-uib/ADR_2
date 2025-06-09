@@ -1,0 +1,98 @@
+# Día 4
+
+## Personalización de gráficos
+
+### Escalas:
+
+```r
+scale_x_continuous(name = "Eje X", limits = c(25,30))
+scale_y_continuous(name = "Eje Y", breaks = c(15,20,25), labels = c("quince", "veinte", "veinticinco"))
+scale_color_manual(values = c("red", "blue"))
+scale_fill_manual(values = c("blue", "red"))
+```
+
+### Coordenadas y Zoom:
+
+```r
+coord_cartesian(ylim = c(30, 35), xlim = c(2,4))
+```
+
+### Facetas y temas:
+
+- `facet_wrap()`, `facet_grid()`
+- `theme_classic()`, `theme_bw()`...
+
+## Exportación
+
+```r
+save(objeto, file="objeto.RData")
+write.csv(tabla, "tabla.csv")
+png("grafica.png")
+# plot code
+dev.off()
+```
+
+## Introducción a la estadística
+
+Uso del paquete `compareGroups`:
+
+```r
+resultado <- compareGroups(var1 ~ var2, data = tabla)
+createTable(resultado)
+```
+
+## Quarto y RMarkdown
+
+- Transparencia y reproducibilidad científica
+- Integración con RStudio
+- Múltiples formatos: HTML, PDF, Word
+- Automatización de informes
+
+### YAML de ejemplo:
+
+```yaml
+---
+title: "Análisis de tabla"
+author: "Tu nombre"
+date: today
+format:
+  html:
+    theme: cosmo
+    toc: true
+    echo: false
+---
+```
+
+## Práctica 6 y 7
+
+- Crear documento Quarto con análisis `compareGroups` por `Gender`.
+- Crear y guardar una gráfica.
+- Insertar gráfica guardada.
+- Práctica 7: Informe usando StatRadar.
+
+
+---
+
+## Ejemplo completo con escalas, etiquetas y exportación
+
+```r
+library(ggplot2)
+
+grafica <- ggplot(healthdata, aes(x = Weight, y = Waist, color = Gender)) +
+  geom_point() +
+  scale_x_continuous(name = "Peso (kg)", limits = c(50, 100)) +
+  scale_y_continuous(name = "Cintura (cm)", breaks = seq(60, 120, 10)) +
+  labs(title = "Relación Peso-Cintura", subtitle = "Datos por género") +
+  theme_classic()
+
+# Guardar la gráfica
+png("peso_cintura.png", width = 800, height = 600)
+print(grafica)
+dev.off()
+```
+
+## Quarto y reproducibilidad
+
+Recuerda que los archivos `.qmd` pueden contener texto + código + resultados.
+Esto hace que tu análisis sea transparente, reproducible y fácil de compartir.
+

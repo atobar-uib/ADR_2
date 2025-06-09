@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Introducción a R y Rstudio – Análiside Datos con R y Python</title>
+<title>3&nbsp; Día 2 – Análiside Datos con R y Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02_Modulo_Exploracion.html" rel="next">
-<link href="./MicrocreditoI.html" rel="prev">
+<link href="./dia3.html" rel="next">
+<link href="./dia1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -84,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./MicrocreditoI.html">Microcredito I</a></li><li class="breadcrumb-item"><a href="./01_Modulo_R.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción a R y Rstudio</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./MicrocreditoI.html">Microcredito I</a></li><li class="breadcrumb-item"><a href="./dia2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Día 2</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -135,32 +169,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_Modulo_R.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción a R y Rstudio</span></span></a>
+  <a href="./dia1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Día 1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_Modulo_Exploracion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Módulo 2. Análisis exploratorio de datos (EDA)</span></span></a>
+  <a href="./dia2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Día 2</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_Modulo_Estadistica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Módulo 3. Estadística básica (tidyverse)</span></span></a>
+  <a href="./dia3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Día 3</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_Modulo_Informes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Módulo 4. Informes Quarto/Rmarkdown</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./05_Modulo_Graficos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Módulo 5. Representación gráfica de datos estadísticos</span></span></a>
+  <a href="./dia4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Día 4</span></span></a>
   </div>
 </li>
       </ul>
@@ -175,17 +203,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#introducción-a-la-ide-rstudio" id="toc-introducción-a-la-ide-rstudio" class="nav-link active" data-scroll-target="#introducción-a-la-ide-rstudio"><span class="header-section-number">2.1</span> Introducción a la IDE Rstudio</a></li>
-  <li><a href="#importación-y-lectura-de-datos" id="toc-importación-y-lectura-de-datos" class="nav-link" data-scroll-target="#importación-y-lectura-de-datos"><span class="header-section-number">2.2</span> Importación y lectura de datos</a></li>
+  <li><a href="#práctica-2" id="toc-práctica-2" class="nav-link active" data-scroll-target="#práctica-2"><span class="header-section-number">3.1</span> Práctica 2</a></li>
+  <li><a href="#tipos-de-objetos-en-r" id="toc-tipos-de-objetos-en-r" class="nav-link" data-scroll-target="#tipos-de-objetos-en-r"><span class="header-section-number">3.2</span> Tipos de objetos en R</a>
+  <ul class="collapse">
+  <li><a href="#vectores" id="toc-vectores" class="nav-link" data-scroll-target="#vectores"><span class="header-section-number">3.2.1</span> Vectores</a></li>
+  <li><a href="#matrices-y-listas" id="toc-matrices-y-listas" class="nav-link" data-scroll-target="#matrices-y-listas"><span class="header-section-number">3.2.2</span> Matrices y listas</a></li>
+  <li><a href="#data-frames" id="toc-data-frames" class="nav-link" data-scroll-target="#data-frames"><span class="header-section-number">3.2.3</span> Data Frames</a></li>
+  </ul></li>
+  <li><a href="#práctica-3" id="toc-práctica-3" class="nav-link" data-scroll-target="#práctica-3"><span class="header-section-number">3.3</span> Práctica 3</a></li>
+  <li><a href="#manipulación-de-tablas-con-dplyr" id="toc-manipulación-de-tablas-con-dplyr" class="nav-link" data-scroll-target="#manipulación-de-tablas-con-dplyr"><span class="header-section-number">3.4</span> Manipulación de tablas con <code>dplyr</code></a></li>
+  <li><a href="#práctica-4" id="toc-práctica-4" class="nav-link" data-scroll-target="#práctica-4"><span class="header-section-number">3.5</span> Práctica 4</a></li>
+  <li><a href="#ejemplo-clasificar-valores-lógicos-y-tipos" id="toc-ejemplo-clasificar-valores-lógicos-y-tipos" class="nav-link" data-scroll-target="#ejemplo-clasificar-valores-lógicos-y-tipos"><span class="header-section-number">3.6</span> Ejemplo: Clasificar valores lógicos y tipos</a></li>
+  <li><a href="#buenas-prácticas" id="toc-buenas-prácticas" class="nav-link" data-scroll-target="#buenas-prácticas"><span class="header-section-number">3.7</span> Buenas prácticas</a></li>
+  <li><a href="#ejemplo-con-dplyr" id="toc-ejemplo-con-dplyr" class="nav-link" data-scroll-target="#ejemplo-con-dplyr"><span class="header-section-number">3.8</span> Ejemplo con <code>dplyr</code></a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./MicrocreditoI.html">Microcredito I</a></li><li class="breadcrumb-item"><a href="./01_Modulo_R.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción a R y Rstudio</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./MicrocreditoI.html">Microcredito I</a></li><li class="breadcrumb-item"><a href="./dia2.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Día 2</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introducción a R y Rstudio</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Día 2</span></h1>
 </div>
 
 
@@ -202,11 +241,114 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introducción-a-la-ide-rstudio" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="introducción-a-la-ide-rstudio"><span class="header-section-number">2.1</span> Introducción a la IDE Rstudio</h2>
+<section id="práctica-2" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="práctica-2"><span class="header-section-number">3.1</span> Práctica 2</h2>
+<ol type="1">
+<li>Tabla <code>antonia_font</code>:
+<ul>
+<li>Visualiza la canción número 15.</li>
+<li>Usa <code>grep</code> para buscar la palabra “lluna” en la columna <code>lletra</code>. ¿Cuántas canciones la contienen?</li>
+</ul></li>
+<li>Tabla <code>healthdata</code>:
+<ul>
+<li>Muestra los nombres de las columnas.</li>
+<li>Usa <code>class()</code> para indicar el tipo de cada columna.</li>
+</ul></li>
+<li>Tabla <code>balears_aemet</code>:
+<ul>
+<li>Visualiza las primeras 15 filas.</li>
+<li>Usa <code>summary()</code> y <code>describe()</code> para describir los datos.</li>
+<li>¿Hay alguna variable mal introducida?</li>
+</ul></li>
+</ol>
 </section>
-<section id="importación-y-lectura-de-datos" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="importación-y-lectura-de-datos"><span class="header-section-number">2.2</span> Importación y lectura de datos</h2>
+<section id="tipos-de-objetos-en-r" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="tipos-de-objetos-en-r"><span class="header-section-number">3.2</span> Tipos de objetos en R</h2>
+<section id="vectores" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="vectores"><span class="header-section-number">3.2.1</span> Vectores</h3>
+<ul>
+<li><code>numeric</code> / <code>double</code>: valores numéricos decimales.</li>
+<li><code>integer</code>: números enteros.</li>
+<li><code>character</code>: cadenas de texto.</li>
+<li><code>logical</code>: valores <code>TRUE</code> o <code>FALSE</code>.</li>
+<li><code>Date</code>: fechas (usando <code>as.Date()</code>).</li>
+</ul>
+</section>
+<section id="matrices-y-listas" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="matrices-y-listas"><span class="header-section-number">3.2.2</span> Matrices y listas</h3>
+<ul>
+<li>Matrices: estructuras bidimensionales homogéneas (<code>as.matrix()</code>).</li>
+<li>Listas: estructuras que pueden contener tipos distintos (<code>list()</code>).</li>
+</ul>
+</section>
+<section id="data-frames" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="data-frames"><span class="header-section-number">3.2.3</span> Data Frames</h3>
+<ul>
+<li>Tablas bidimensionales.</li>
+<li>Cada columna puede tener un tipo distinto.</li>
+</ul>
+</section>
+</section>
+<section id="práctica-3" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="práctica-3"><span class="header-section-number">3.3</span> Práctica 3</h2>
+<ol type="1">
+<li>Identifica el tipo de <code>balears_aemet$fecha</code> y <code>balears_aemet$prec</code>, y corrígelo.</li>
+<li>Calcula el índice de masa corporal (IMC): <code>Weight / Height^2</code>.</li>
+<li>Calcula la ráfaga mínima y máxima en “PALMA, PUERTO”.</li>
+</ol>
+</section>
+<section id="manipulación-de-tablas-con-dplyr" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="manipulación-de-tablas-con-dplyr"><span class="header-section-number">3.4</span> Manipulación de tablas con <code>dplyr</code></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">nueva_variable =</span> ...) <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(...) <span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(...) <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(...) <span class="sc">%&gt;%</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(...)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="práctica-4" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="práctica-4"><span class="header-section-number">3.5</span> Práctica 4</h2>
+<p>Crear la variable <code>vent_tipus</code> en <code>balears_aemet</code>: - fluix: &lt; 5.83 m/s - moderats: 5.83–11.38 m/s - forts: 11.39–19.71 m/s - molt_forts: 19.72–33.33 m/s - huracanats: &gt; 33.33 m/s</p>
+<p>Contar cuántos días hay de cada tipo de viento por estación (Palma, Eivissa, Menorca).</p>
+<hr>
+</section>
+<section id="ejemplo-clasificar-valores-lógicos-y-tipos" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="ejemplo-clasificar-valores-lógicos-y-tipos"><span class="header-section-number">3.6</span> Ejemplo: Clasificar valores lógicos y tipos</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Supongamos que 'antonia_font' tiene una columna 'lletra'</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Buscar canciones que mencionan "lluna"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">"lluna"</span>, antonia_font<span class="sc">$</span>lletra, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Comprobar tipo de variable</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(healthdata<span class="sc">$</span>Age)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">is.numeric</span>(healthdata<span class="sc">$</span>Age)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir fecha</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>balears_aemet<span class="sc">$</span>fecha <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(balears_aemet<span class="sc">$</span>fecha, <span class="at">format =</span> <span class="st">"%Y-%m-%d"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="buenas-prácticas" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="buenas-prácticas"><span class="header-section-number">3.7</span> Buenas prácticas</h2>
+<ul>
+<li>Revisa siempre los tipos de datos antes de analizarlos.</li>
+<li>Usa <code>str()</code> y <code>summary()</code> como herramientas diagnósticas.</li>
+<li>Cuando manipules datos meteorológicos o clínicos, asegúrate de trabajar con unidades homogéneas.</li>
+</ul>
+</section>
+<section id="ejemplo-con-dplyr" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="ejemplo-con-dplyr"><span class="header-section-number">3.8</span> Ejemplo con <code>dplyr</code></h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular IMC</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>healthdata <span class="ot">&lt;-</span> healthdata <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">BMI =</span> Weight <span class="sc">/</span> (Height<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver los valores máximos de racha por ubicación</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>balears_aemet <span class="sc">%&gt;%</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(nombre <span class="sc">==</span> <span class="st">"PALMA, PUERTO"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">min_racha =</span> <span class="fu">min</span>(racha, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_racha =</span> <span class="fu">max</span>(racha, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -778,13 +920,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./MicrocreditoI.html" class="pagination-link" aria-label="Microcredito I">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Microcredito I</span>
+      <a href="./dia1.html" class="pagination-link" aria-label="Día 1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Día 1</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02_Modulo_Exploracion.html" class="pagination-link" aria-label="Módulo 2. Análisis exploratorio de datos (EDA)">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Módulo 2. Análisis exploratorio de datos (EDA)</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./dia3.html" class="pagination-link" aria-label="Día 3">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Día 3</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

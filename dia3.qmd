@@ -1,0 +1,73 @@
+# Día 3
+
+## Manipulación avanzada de tablas
+
+### Funciones `dplyr`:
+
+- `mutate()`: añade variables nuevas.
+- `select()`: selecciona columnas.
+- `distinct()`: elimina duplicados.
+- `filter()`: filtra filas.
+- `summarize()`: resumen estadístico por grupo.
+
+### Ejemplo:
+
+```r
+balears_aemet %>%
+  group_by(nombre) %>%
+  summarize(COR = cor(presMin, prec_num, use="complete.obs"))
+```
+
+## Clasificación de precipitaciones
+
+```r
+mutate(prec_cat = ifelse(prec <= 2, "débil",
+                  ifelse(prec <= 15, "moderada",
+                  ifelse(prec <= 30, "fuertes",
+                  ifelse(prec <= 60, "muy_fuertes", "torrenciales")))))
+```
+
+## Introducción a gráficos con `ggplot2`
+
+### Tipos de gráficos:
+
+- Univariantes: histogramas, boxplot
+- Bivariantes: dispersión, líneas
+- Categóricos: barras
+- Combinados: boxplot por categoría, columnas
+
+### Estructura:
+
+```r
+ggplot(data, aes(x, y)) + geom_point()
+```
+
+## Práctica 5
+
+- Representar `Age` (barras), `Weight` vs `Waist` (puntos), `Age` por género (boxplot), `Weight` (histograma).
+- Para `antoniafont`: barras por disco, color y tema personalizado.
+
+
+---
+
+## Ejemplo visual completo
+
+```r
+library(ggplot2)
+
+# Dispersión: Peso vs Cintura
+ggplot(healthdata, aes(x = Weight, y = Waist, color = Gender)) +
+  geom_point() +
+  theme_minimal() +
+  labs(title = "Relación entre Peso y Cintura",
+       x = "Peso (kg)",
+       y = "Cintura (cm)")
+```
+
+## Consejo
+
+Cuando hagas gráficos:
+- Usa `theme_minimal()` o `theme_classic()` para una apariencia profesional.
+- Siempre nombra los ejes y agrega títulos claros.
+- Usa `facet_wrap(~ variable)` si necesitas comparar subgrupos.
+

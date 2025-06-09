@@ -1,0 +1,288 @@
+# Día 1
+
+## ¿Qué aprenderás?
+
+- Utilizar la interfaz RStudio  
+- Conocer los tipos de objetos en R  
+- Instalar y buscar paquetes  
+- Escribir tus propias funciones y scripts en R  
+- Realizar los gráficos más adecuados según el tipo de análisis  
+- Generar informes y garantizar la repetibilidad de los resultados  
+
+## ¿Qué es R?
+
+R es un software libre y un lenguaje de programación interpretado, enfocado en la estadística y el análisis de datos.  
+Características:
+
+- Multiplataforma  
+- Proyecto abierto y colaborativo  
+
+## Paquetes en R
+
+Los paquetes son extensiones de R que contienen código, documentación y datos.
+
+### Repositorios comunes
+
+- **CRAN**: Red oficial de distribución  
+  ```r
+  install.packages("nombre_paquete")
+  ```
+
+- **Bioconductor**: Orientado a datos biológicos  
+  ```r
+  BiocManager::install(c("GenomicFeatures", "AnnotationDbi"))
+  ```
+
+- **GitHub**: Repositorios sin control de calidad oficial  
+  ```r
+  devtools::install_github("usuario/repositorio")
+  ```
+
+## Instalación de R
+
+### Windows
+
+[Descargar R para Windows](https://cran.r-project.org/bin/windows/base/R-4.4.1-win.exe)
+
+### Mac
+
+[Descargar R para Mac (ARM)](https://cran.r-project.org/bin/macosx/big-sur-arm64/base/R-4.4.1-arm64.pkg)
+
+### Linux (Ubuntu/Debian)
+
+```bash
+sudo apt update
+sudo apt install r-base r-base-dev -y
+```
+
+## ¿Cómo usar R?
+
+### Consola
+
+Interfaz de línea de comandos sin entorno gráfico.
+
+### IDE: RStudio
+
+Entorno integrado de desarrollo para R.  
+Incluye:
+
+- Editor de código  
+- Consola  
+- Historial de comandos  
+- Explorador de archivos  
+- Panel de gráficos  
+- Gestor de paquetes  
+- Ayuda contextual  
+
+### Acceso a RStudio vía servidor
+
+- URL: [https://bioinformatica.idisba.es/rstudio/](https://bioinformatica.idisba.es/rstudio/)  
+- Usuario y contraseña: enviados por correo electrónico  
+
+## ¿Qué es un proyecto?
+
+Un proyecto en R agrupa scripts, datos y resultados:
+
+- En Linux: `./tablas/nombre_archivo`  
+- En Windows: `.	ablas
+ombre_archivo`  
+- Guarda historial de comandos  
+- Almacena objetos en memoria  
+- Permite control de versiones (GitHub)  
+- Permite replicabilidad con `renv`  
+
+## Crear un proyecto
+
+Opciones:
+
+- Clonar repositorio desde GitHub  
+- Usar `renv` para entornos reproducibles  
+- Crear carpetas como:  
+  - `scripts/`  
+  - `practicas/`  
+
+## Crear un script
+
+Un script es un conjunto de instrucciones en un archivo `.R`.
+
+- Se escribe código que se ejecutará paso a paso  
+- Los comentarios comienzan con `#`  
+- Ejemplo:  
+  ```r
+  # Cargar datos
+  datos <- read.csv("archivo.csv")
+  ```
+
+## Mover archivos si están en la ubicación incorrecta
+
+Puedes reorganizar manualmente los archivos desde el explorador de RStudio o el sistema operativo.
+
+## Lectura de bases de datos
+
+| Formato | Función          | Paquete       |
+|---------|------------------|---------------|
+| CSV     | `read.csv()`     | utils         |
+| CSV     | `read_csv()`     | readr         |
+| Excel   | `read.xlsx()`    | xlsx          |
+| SPSS    | `read_sav()`     | haven         |
+
+### Ejemplo CSV
+
+```r
+library(readr)
+tabla <- read_csv("archivo.csv")
+```
+
+```r
+read.csv(file = "tabla.csv", sep = ",", dec = ".", header = TRUE)
+```
+
+Parámetros comunes:
+
+- `sep`: Separador (`,` `;` `	`)  
+- `dec`: Separador decimal (`.` o `,`)  
+- `header`: Indica si hay cabecera  
+- `skip`: Saltar filas  
+- `check.names`: Validar nombres de columnas  
+- `comment.char`: Define carácter de comentario (`#`)  
+
+## Excel
+
+```r
+read.xlsx(file = "archivo.xlsx", sheetIndex = 1, header = TRUE)
+```
+
+## SPSS
+
+```r
+library(haven)
+datos <- read_sav("archivo.sav")
+```
+
+## Almacenar datos en R
+
+```r
+tabla <- read.csv("archivo.csv", sep = ",", dec = ".", header = TRUE)
+```
+
+También se puede usar `=` como operador de asignación.
+
+## Práctica 1
+
+Carga las siguientes tablas y asígnales un nombre:
+
+| Archivo                                  | Nombre en R      |
+|------------------------------------------|------------------|
+| `balears_aemet_1980_2023.csv`           | `balears_aemet`  |
+| `Causa_muerte_baleares_1980_2023.xlsx`  | `mort_balears`   |
+| `HealthData.sav`                        | `healthdata`     |
+| `antonia_font.txt`                      | `antonia_font`   |
+| `zoo.txt`                               | `zoo`            |
+
+```r
+padro_balears <- read.csv("./tablas/padro_balears_INE_1971_2020.csv", sep = ",", dec = ".", header = TRUE, skip = 0)
+```
+
+## ¡Ya tenemos datos!
+
+### Visualización básica
+
+```r
+head(tabla)
+tibble::view(tabla)
+colnames(tabla)
+print(tabla)
+cat("Mensaje")
+```
+
+### Dimensiones y tipos
+
+```r
+dim(tabla)
+length(variable)
+class(variable)
+```
+
+## Descripción básica
+
+```r
+str(tabla)     # estructura
+summary(tabla) # resumen estadístico
+```
+
+Con el paquete `Hmisc`:
+
+```r
+library(Hmisc)
+describe(tabla)
+```
+
+### Funciones de estadística descriptiva
+
+| Función   | Descripción                      |
+|----------|----------------------------------|
+| `mean()` | Media                            |
+| `median()` | Mediana                         |
+| `table()` | Tabla de frecuencias             |
+| `range()` | Rango                            |
+| `var()`   | Varianza                         |
+| `sd()`    | Desviación estándar              |
+
+## Operadores y funciones básicas
+
+| Operador | Significado      |
+|----------|------------------|
+| `+`      | Suma             |
+| `-`      | Resta            |
+| `*`      | Multiplicación   |
+| `/`      | División         |
+| `^`      | Potencia         |
+| `==`     | Igual            |
+| `<`, `<=`| Menor, menor igual |
+| `>`, `>=`| Mayor, mayor igual |
+
+Funciones comunes:
+
+- `min()`, `max()`  
+- `length()`  
+- `sum()`  
+- `sort()`  
+- `grep()`, `gsub()`, `strsplit()`  
+- `paste()`  
+- `print()`, `cat()`  
+
+
+---
+
+## Consejos prácticos
+
+- Siempre comenta tu código para entender qué hace cada bloque.
+- Guarda tus scripts con nombres significativos: por ejemplo, `importar_datos.R` es mejor que `script1.R`.
+- Usa `View(nombre_tabla)` en RStudio para explorar tablas interactivamente.
+
+## Ejemplo completo: importar y explorar una tabla CSV
+
+```r
+# Instalar el paquete si no lo tienes
+install.packages("readr")
+
+# Cargar el paquete
+library(readr)
+
+# Leer una tabla CSV
+datos <- read_csv("datos_salud.csv")
+
+# Ver las primeras filas
+head(datos)
+
+# Obtener la estructura de la tabla
+str(datos)
+
+# Ver un resumen estadístico
+summary(datos)
+
+# Mostrar los nombres de columnas
+colnames(datos)
+```
+
+Este flujo te permitirá empezar a trabajar con datos reales de forma sencilla y ordenada.

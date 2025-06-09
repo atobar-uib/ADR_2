@@ -13,11 +13,15 @@ book:
     - intro.qmd
     - part: MicrocreditoI.qmd
       chapters: 
-        - 01_Modulo_R.qmd
-        - 02_Modulo_Exploracion.qmd
-        - 03_Modulo_Estadistica.qmd
-        - 04_Modulo_Informes.qmd
-        - 05_Modulo_Graficos.qmd
+        - dia1.qmd
+        - dia2.qmd
+        - dia3.qmd
+        - dia4.qmd
+        #- 01_Modulo_R.qmd
+        #- 02_Modulo_Exploracion.qmd
+        #- 03_Modulo_Estadistica.qmd
+        #- 04_Modulo_Informes.qmd
+        #- 05_Modulo_Graficos.qmd
 
 bibliography: references.bib
 
