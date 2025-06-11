@@ -1,10 +1,3 @@
 # Prefacio {.unnumbered}
 
-Este  documento es una versión de unas notas para Análisis de Datos con R
-
 Ha sido elaborado con [Quarto](https://quarto.org/)
-
-:   RStudio, PBC. (2022). Quarto (Version 1.0).
-
-![]("dad.jpg")
-

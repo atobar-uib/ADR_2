@@ -1,4 +1,3 @@
-# Introducción
+# Introducción {.unnumbered}
 
-Estas son unas notas para el análiside datos vcn R
-
+En este curso se estudiarán: blablabla

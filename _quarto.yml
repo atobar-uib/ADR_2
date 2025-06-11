@@ -3,26 +3,23 @@ project:
   output-dir: docs
   
 book:
-  title: "Análiside Datos con R y Python"
-  author: "RICUIB"
-  date: " febrero 2025"
-  subtitle: "Guía para el Análisis de Datos con R y Python"
+  title: "Estadística Aplicada con R"
+  author: "MODAE"
+  date: " 11 junio 2025"
+  subtitle: "Guía de estadística aplicada con R"
   
   chapters:
     - index.qmd
     - intro.qmd
-    - part: MicrocreditoI.qmd
+    - part: Contenidos
       chapters: 
-        - dia1.qmd
-        - dia2.qmd
-        - dia3.qmd
-        - dia4.qmd
-        - dia5.qmd
-        #- 01_Modulo_R.qmd
-        #- 02_Modulo_Exploracion.qmd
-        #- 03_Modulo_Estadistica.qmd
-        #- 04_Modulo_Informes.qmd
-        #- 05_Modulo_Graficos.qmd
+        - Preliminares.qmd
+        - Contrastes_de_hipotesis.qmd 
+        - ANOVA.qmd
+        - Regresion.qmd
+        - Supervivencia.qmd
+        - Modelos_lineales.qmd
+
 
 bibliography: references.bib
 

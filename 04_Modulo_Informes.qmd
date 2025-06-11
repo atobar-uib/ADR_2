@@ -1,6 +1,0 @@
-# Módulo 4. Informes Quarto/Rmarkdown 
-
-## Generación de informes.  
-
-
-## Manipulación de plantillas. 

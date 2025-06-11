@@ -1,6 +1,0 @@
-# Introducción a R y Rstudio
-
-
-## Introducción a la IDE Rstudio
-
-## Importación y lectura de datos
