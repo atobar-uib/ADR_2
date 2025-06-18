@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -36,12 +70,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-8257441fb9f1e64a25accc9896cecfae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-159a71a2c119166a0a245054d9e10b5d.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,6 +104,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="custom.css">
 </head>
@@ -175,8 +238,88 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#capítulo-1-introducción-a-los-modelos-lineales-generalizados" id="toc-capítulo-1-introducción-a-los-modelos-lineales-generalizados" class="nav-link active" data-scroll-target="#capítulo-1-introducción-a-los-modelos-lineales-generalizados"><span class="header-section-number">6.1</span> 📖 Capítulo 1: Introducción a los Modelos Lineales Generalizados</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link" data-scroll-target="#objetivos-del-capítulo">Objetivos del capítulo:</a></li>
+  <li><a href="#qué-son-los-modelos-lineales-generalizados" id="toc-qué-son-los-modelos-lineales-generalizados" class="nav-link" data-scroll-target="#qué-son-los-modelos-lineales-generalizados">¿Qué son los Modelos Lineales Generalizados?</a></li>
+  </ul></li>
+  <li><a href="#limitaciones-de-la-regresión-lineal-en-medicina" id="toc-limitaciones-de-la-regresión-lineal-en-medicina" class="nav-link" data-scroll-target="#limitaciones-de-la-regresión-lineal-en-medicina">Limitaciones de la regresión lineal en medicina</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-1-variable-binaria-éxito-o-fracaso-quirúrgico" id="toc-ejemplo-1-variable-binaria-éxito-o-fracaso-quirúrgico" class="nav-link" data-scroll-target="#ejemplo-1-variable-binaria-éxito-o-fracaso-quirúrgico">Ejemplo 1: Variable binaria – Éxito o fracaso quirúrgico</a></li>
+  <li><a href="#ejemplo-2-conteos-número-de-reingresos-hospitalarios" id="toc-ejemplo-2-conteos-número-de-reingresos-hospitalarios" class="nav-link" data-scroll-target="#ejemplo-2-conteos-número-de-reingresos-hospitalarios">Ejemplo 2: Conteos – Número de reingresos hospitalarios</a></li>
+  <li><a href="#ejemplo-3-tiempo-de-recuperación-variable-positiva-y-sesgada" id="toc-ejemplo-3-tiempo-de-recuperación-variable-positiva-y-sesgada" class="nav-link" data-scroll-target="#ejemplo-3-tiempo-de-recuperación-variable-positiva-y-sesgada">Ejemplo 3: Tiempo de recuperación – Variable positiva y sesgada</a></li>
+  <li><a href="#por-qué-usar-glm-en-medicina" id="toc-por-qué-usar-glm-en-medicina" class="nav-link" data-scroll-target="#por-qué-usar-glm-en-medicina">¿Por qué usar GLM en medicina?</a></li>
+  <li><a href="#permiten-trabajar-con-distintos-tipos-de-variables" id="toc-permiten-trabajar-con-distintos-tipos-de-variables" class="nav-link" data-scroll-target="#permiten-trabajar-con-distintos-tipos-de-variables">✅ Permiten trabajar con distintos tipos de variables</a></li>
+  <li><a href="#ofrecen-interpretaciones-clínicas-útiles" id="toc-ofrecen-interpretaciones-clínicas-útiles" class="nav-link" data-scroll-target="#ofrecen-interpretaciones-clínicas-útiles">✅ Ofrecen interpretaciones clínicas útiles</a></li>
+  <li><a href="#mejoran-la-precisión-al-respetar-la-naturaleza-de-los-datos" id="toc-mejoran-la-precisión-al-respetar-la-naturaleza-de-los-datos" class="nav-link" data-scroll-target="#mejoran-la-precisión-al-respetar-la-naturaleza-de-los-datos">✅ Mejoran la precisión al respetar la naturaleza de los datos</a></li>
+  <li><a href="#son-fáciles-de-implementar-en-r" id="toc-son-fáciles-de-implementar-en-r" class="nav-link" data-scroll-target="#son-fáciles-de-implementar-en-r">✅ Son fáciles de implementar en R</a></li>
+  <li><a href="#caso-práctico-introductorio-predicción-de-bajo-peso-al-nacer" id="toc-caso-práctico-introductorio-predicción-de-bajo-peso-al-nacer" class="nav-link" data-scroll-target="#caso-práctico-introductorio-predicción-de-bajo-peso-al-nacer">Caso práctico introductorio: Predicción de bajo peso al nacer</a></li>
+  <li><a href="#herramientas-en-r-para-glm" id="toc-herramientas-en-r-para-glm" class="nav-link" data-scroll-target="#herramientas-en-r-para-glm">Herramientas en R para GLM</a></li>
+  </ul></li>
+  <li><a href="#capítulo-2-conceptos-básicos-de-los-modelos-lineales-generalizados-glm" id="toc-capítulo-2-conceptos-básicos-de-los-modelos-lineales-generalizados-glm" class="nav-link" data-scroll-target="#capítulo-2-conceptos-básicos-de-los-modelos-lineales-generalizados-glm"><span class="header-section-number">6.2</span> 📘 Capítulo 2: Conceptos básicos de los Modelos Lineales Generalizados (GLM)</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-del-capítulo-1" id="toc-objetivos-del-capítulo-1" class="nav-link" data-scroll-target="#objetivos-del-capítulo-1"><span class="header-section-number">6.2.1</span> Objetivos del capítulo:</a></li>
+  <li><a href="#qué-es-un-modelo-lineal-generalizado" id="toc-qué-es-un-modelo-lineal-generalizado" class="nav-link" data-scroll-target="#qué-es-un-modelo-lineal-generalizado"><span class="header-section-number">6.2.2</span> ¿Qué es un Modelo Lineal Generalizado?</a></li>
+  <li><a href="#los-tres-componentes-de-un-glm" id="toc-los-tres-componentes-de-un-glm" class="nav-link" data-scroll-target="#los-tres-componentes-de-un-glm"><span class="header-section-number">6.2.3</span> Los tres componentes de un GLM</a></li>
+  <li><a href="#función-de-distribución" id="toc-función-de-distribución" class="nav-link" data-scroll-target="#función-de-distribución">1. <strong>Función de distribución</strong></a></li>
+  <li><a href="#función-de-enlace" id="toc-función-de-enlace" class="nav-link" data-scroll-target="#función-de-enlace">2. <strong>Función de enlace</strong></a></li>
+  <li><a href="#componente-sistemático" id="toc-componente-sistemático" class="nav-link" data-scroll-target="#componente-sistemático">3. <strong>Componente sistemático</strong></a></li>
+  <li><a href="#tipos-de-glm-según-la-variable-dependiente" id="toc-tipos-de-glm-según-la-variable-dependiente" class="nav-link" data-scroll-target="#tipos-de-glm-según-la-variable-dependiente">Tipos de GLM según la variable dependiente</a></li>
+  <li><a href="#regresión-logística-variable-binaria" id="toc-regresión-logística-variable-binaria" class="nav-link" data-scroll-target="#regresión-logística-variable-binaria"><span class="header-section-number">6.2.4</span> 🔹 Regresión logística (variable binaria)</a></li>
+  <li><a href="#regresión-de-poisson-conteos" id="toc-regresión-de-poisson-conteos" class="nav-link" data-scroll-target="#regresión-de-poisson-conteos">🔹 Regresión de Poisson (conteos)</a></li>
+  <li><a href="#regresión-gamma-variables-positivas-continuas" id="toc-regresión-gamma-variables-positivas-continuas" class="nav-link" data-scroll-target="#regresión-gamma-variables-positivas-continuas">🔹 Regresión Gamma (variables positivas continuas)</a></li>
+  <li><a href="#regresión-lineal-caso-especial-de-glm" id="toc-regresión-lineal-caso-especial-de-glm" class="nav-link" data-scroll-target="#regresión-lineal-caso-especial-de-glm">🔹 Regresión lineal (caso especial de GLM)</a></li>
+  <li><a href="#elección-del-modelo-correcto" id="toc-elección-del-modelo-correcto" class="nav-link" data-scroll-target="#elección-del-modelo-correcto"><span class="header-section-number">6.2.5</span> Elección del modelo correcto</a></li>
+  <li><a href="#ejemplo-práctico-elección-del-modelo-en-medicina" id="toc-ejemplo-práctico-elección-del-modelo-en-medicina" class="nav-link" data-scroll-target="#ejemplo-práctico-elección-del-modelo-en-medicina">Ejemplo práctico: elección del modelo en medicina</a></li>
+  <li><a href="#interpretación-de-los-coeficientes" id="toc-interpretación-de-los-coeficientes" class="nav-link" data-scroll-target="#interpretación-de-los-coeficientes"><span class="header-section-number">6.2.6</span> Interpretación de los coeficientes</a></li>
+  <li><a href="#diagnóstico-básico-de-modelos" id="toc-diagnóstico-básico-de-modelos" class="nav-link" data-scroll-target="#diagnóstico-básico-de-modelos"><span class="header-section-number">6.2.7</span> Diagnóstico básico de modelos</a></li>
+  </ul></li>
+  <li><a href="#capítulo-3-regresión-logística-en-medicina" id="toc-capítulo-3-regresión-logística-en-medicina" class="nav-link" data-scroll-target="#capítulo-3-regresión-logística-en-medicina"><span class="header-section-number">6.3</span> 📘 Capítulo 3: Regresión logística en medicina</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-del-capítulo-2" id="toc-objetivos-del-capítulo-2" class="nav-link" data-scroll-target="#objetivos-del-capítulo-2">Objetivos del capítulo:</a></li>
+  <li><a href="#qué-es-la-regresión-logística" id="toc-qué-es-la-regresión-logística" class="nav-link" data-scroll-target="#qué-es-la-regresión-logística">¿Qué es la regresión logística?</a></li>
+  <li><a href="#ejemplo-médico-predicción-de-riesgo-de-diabetes" id="toc-ejemplo-médico-predicción-de-riesgo-de-diabetes" class="nav-link" data-scroll-target="#ejemplo-médico-predicción-de-riesgo-de-diabetes">Ejemplo médico: Predicción de riesgo de diabetes</a></li>
+  <li><a href="#construcción-del-modelo-logístico" id="toc-construcción-del-modelo-logístico" class="nav-link" data-scroll-target="#construcción-del-modelo-logístico">Construcción del modelo logístico</a></li>
+  <li><a href="#salida-resumen" id="toc-salida-resumen" class="nav-link" data-scroll-target="#salida-resumen">Salida (resumen):</a></li>
+  <li><a href="#interpretación-de-los-coeficientes-1" id="toc-interpretación-de-los-coeficientes-1" class="nav-link" data-scroll-target="#interpretación-de-los-coeficientes-1">Interpretación de los coeficientes</a></li>
+  <li><a href="#evaluación-del-modelo" id="toc-evaluación-del-modelo" class="nav-link" data-scroll-target="#evaluación-del-modelo">Evaluación del modelo</a></li>
+  <li><a href="#predicciones-de-probabilidad" id="toc-predicciones-de-probabilidad" class="nav-link" data-scroll-target="#predicciones-de-probabilidad">1. Predicciones de probabilidad</a></li>
+  <li><a href="#curva-roc-y-auc" id="toc-curva-roc-y-auc" class="nav-link" data-scroll-target="#curva-roc-y-auc">2. Curva ROC y AUC</a></li>
+  <li><a href="#matriz-de-confusión" id="toc-matriz-de-confusión" class="nav-link" data-scroll-target="#matriz-de-confusión">3. Matriz de confusión</a></li>
+  <li><a href="#métricas-básicas" id="toc-métricas-básicas" class="nav-link" data-scroll-target="#métricas-básicas">4. Métricas básicas</a></li>
+  <li><a href="#visualización-de-efectos" id="toc-visualización-de-efectos" class="nav-link" data-scroll-target="#visualización-de-efectos">Visualización de efectos</a></li>
+  <li><a href="#usando-visreg" id="toc-usando-visreg" class="nav-link" data-scroll-target="#usando-visreg">Usando <code>visreg</code>:</a></li>
+  <li><a href="#efecto-de-antecedentes-familiares" id="toc-efecto-de-antecedentes-familiares" class="nav-link" data-scroll-target="#efecto-de-antecedentes-familiares">Efecto de antecedentes familiares:</a></li>
+  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión">Conclusión</a></li>
+  </ul></li>
+  <li><a href="#capítulo-4-regresión-de-poisson-y-binomial-negativa-en-medicina" id="toc-capítulo-4-regresión-de-poisson-y-binomial-negativa-en-medicina" class="nav-link" data-scroll-target="#capítulo-4-regresión-de-poisson-y-binomial-negativa-en-medicina"><span class="header-section-number">6.4</span> 📘 Capítulo 4: Regresión de Poisson y binomial negativa en medicina</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-del-capítulo-3" id="toc-objetivos-del-capítulo-3" class="nav-link" data-scroll-target="#objetivos-del-capítulo-3">Objetivos del capítulo:</a></li>
+  <li><a href="#qué-es-la-regresión-de-poisson" id="toc-qué-es-la-regresión-de-poisson" class="nav-link" data-scroll-target="#qué-es-la-regresión-de-poisson"><span class="header-section-number">6.4.1</span> ¿Qué es la regresión de Poisson?</a></li>
+  <li><a href="#ejemplo-médico-número-de-hospitalizaciones" id="toc-ejemplo-médico-número-de-hospitalizaciones" class="nav-link" data-scroll-target="#ejemplo-médico-número-de-hospitalizaciones">Ejemplo médico: Número de hospitalizaciones</a></li>
+  <li><a href="#construcción-del-modelo-de-poisson" id="toc-construcción-del-modelo-de-poisson" class="nav-link" data-scroll-target="#construcción-del-modelo-de-poisson">Construcción del modelo de Poisson</a></li>
+  <li><a href="#salida-resumen-1" id="toc-salida-resumen-1" class="nav-link" data-scroll-target="#salida-resumen-1">Salida (resumen):</a></li>
+  <li><a href="#interpretación-de-los-coeficientes-2" id="toc-interpretación-de-los-coeficientes-2" class="nav-link" data-scroll-target="#interpretación-de-los-coeficientes-2">Interpretación de los coeficientes</a></li>
+  <li><a href="#ejemplo-de-interpretación" id="toc-ejemplo-de-interpretación" class="nav-link" data-scroll-target="#ejemplo-de-interpretación">Ejemplo de interpretación:</a></li>
+  <li><a href="#diagnóstico-hay-sobredispersión" id="toc-diagnóstico-hay-sobredispersión" class="nav-link" data-scroll-target="#diagnóstico-hay-sobredispersión">Diagnóstico: ¿Hay sobredispersión?</a></li>
+  <li><a href="#comprobación-rápida" id="toc-comprobación-rápida" class="nav-link" data-scroll-target="#comprobación-rápida">Comprobación rápida:</a></li>
+  <li><a href="#alternativa-regresión-binomial-negativa" id="toc-alternativa-regresión-binomial-negativa" class="nav-link" data-scroll-target="#alternativa-regresión-binomial-negativa">Alternativa: Regresión binomial negativa</a></li>
+  <li><a href="#evaluación-del-modelo-1" id="toc-evaluación-del-modelo-1" class="nav-link" data-scroll-target="#evaluación-del-modelo-1">Evaluación del modelo</a></li>
+  <li><a href="#predicciones-de-conteo-esperado" id="toc-predicciones-de-conteo-esperado" class="nav-link" data-scroll-target="#predicciones-de-conteo-esperado">1. Predicciones de conteo esperado</a></li>
+  <li><a href="#gráfico-de-residuos" id="toc-gráfico-de-residuos" class="nav-link" data-scroll-target="#gráfico-de-residuos">2. Gráfico de residuos</a></li>
+  <li><a href="#comparación-de-modelos-aic" id="toc-comparación-de-modelos-aic" class="nav-link" data-scroll-target="#comparación-de-modelos-aic">3. Comparación de modelos (AIC)</a></li>
+  <li><a href="#visualización-de-efectos-1" id="toc-visualización-de-efectos-1" class="nav-link" data-scroll-target="#visualización-de-efectos-1">Visualización de efectos</a></li>
+  <li><a href="#usando-visreg-1" id="toc-usando-visreg-1" class="nav-link" data-scroll-target="#usando-visreg-1">Usando <code>visreg</code>:</a></li>
+  <li><a href="#efecto-de-ser-fumador" id="toc-efecto-de-ser-fumador" class="nav-link" data-scroll-target="#efecto-de-ser-fumador">Efecto de ser fumador:</a></li>
+  <li><a href="#conclusión-1" id="toc-conclusión-1" class="nav-link" data-scroll-target="#conclusión-1">Conclusión</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -200,8 +343,1162 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="capítulo-1-introducción-a-los-modelos-lineales-generalizados" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="capítulo-1-introducción-a-los-modelos-lineales-generalizados"><span class="header-section-number">6.1</span> 📖 Capítulo 1: Introducción a los Modelos Lineales Generalizados</h2>
+<section id="objetivos-del-capítulo" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="objetivos-del-capítulo">Objetivos del capítulo:</h3>
+<ul>
+<li>Entender las limitaciones de la regresión lineal clásica</li>
+<li>Conocer qué son los Modelos Lineales Generalizados (GLM)</li>
+<li>Aprender por qué son esenciales en análisis médicos y sanitarios</li>
+<li>Familiarizarse con la estructura básica de un GLM</li>
+</ul>
+</section>
+<section id="qué-son-los-modelos-lineales-generalizados" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="qué-son-los-modelos-lineales-generalizados">¿Qué son los Modelos Lineales Generalizados?</h3>
+<p>Los <strong>Modelos Lineales Generalizados (GLM, por sus siglas en inglés)</strong> son una extensión de los modelos lineales tradicionales que permiten modelar variables respuesta que no se distribuyen normalmente.</p>
+<p>Fueron introducidos por Nelder y Wedderburn en 1972 como una forma flexible de abordar muchos tipos de datos comunes en investigación, especialmente cuando:</p>
+<ul>
+<li>La variable dependiente es <strong>binaria</strong> (sí/no, éxito/fracaso)</li>
+<li>Es un <strong>conteo</strong> (número de hospitalizaciones, eventos adversos)</li>
+<li>Es <strong>positiva y continua</strong>, pero no normal (gastos sanitarios, tiempo de recuperación)</li>
+</ul>
+</section>
+</section>
+<section id="limitaciones-de-la-regresión-lineal-en-medicina" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="limitaciones-de-la-regresión-lineal-en-medicina">Limitaciones de la regresión lineal en medicina</h2>
+<p>La <strong>regresión lineal clásica</strong> asume lo siguiente:</p>
+<ul>
+<li>La variable respuesta sigue una <strong>distribución normal</strong></li>
+<li>La relación entre las variables independientes y la dependiente es <strong>lineal</strong></li>
+<li>Los residuos tienen <strong>varianza constante</strong> (homocedasticidad)</li>
+</ul>
+<p>Sin embargo, estas condiciones <strong>rara vez se cumplen</strong> en muchos estudios médicos. Por ejemplo:</p>
+<section id="ejemplo-1-variable-binaria-éxito-o-fracaso-quirúrgico" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ejemplo-1-variable-binaria-éxito-o-fracaso-quirúrgico">Ejemplo 1: Variable binaria – Éxito o fracaso quirúrgico</h3>
+<p>Imagina que estás analizando si un paciente tiene complicaciones tras una cirugía (sí = 1, no = 0). Si usas un modelo lineal:</p>
+<ul>
+<li>Podrías predecir valores fuera del rango [0,1], lo cual no tiene sentido</li>
+<li>El error tendría varianza distinta según el valor predicho → viola el supuesto de homocedasticidad</li>
+</ul>
+</section>
+<section id="ejemplo-2-conteos-número-de-reingresos-hospitalarios" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ejemplo-2-conteos-número-de-reingresos-hospitalarios">Ejemplo 2: Conteos – Número de reingresos hospitalarios</h3>
+<p>Si estás contando cuántas veces un paciente ha sido ingresado en el último año:</p>
+<ul>
+<li>Estos datos suelen tener muchos ceros y pocos valores altos → cola derecha pesada</li>
+<li>No pueden ser negativos → la normalidad no es adecuada</li>
+<li>Usar una regresión lineal podría dar predicciones negativas</li>
+</ul>
+</section>
+<section id="ejemplo-3-tiempo-de-recuperación-variable-positiva-y-sesgada" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ejemplo-3-tiempo-de-recuperación-variable-positiva-y-sesgada">Ejemplo 3: Tiempo de recuperación – Variable positiva y sesgada</h3>
+<p>En lugar de usar una regresión lineal, que asume simetría, sería más apropiado usar una distribución como <strong>Gamma</strong> o <strong>log-normal</strong></p>
+</section>
+<section id="por-qué-usar-glm-en-medicina" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="por-qué-usar-glm-en-medicina">¿Por qué usar GLM en medicina?</h3>
+<p>Los GLM son una herramienta fundamental en investigación médica porque:</p>
+</section>
+<section id="permiten-trabajar-con-distintos-tipos-de-variables" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="permiten-trabajar-con-distintos-tipos-de-variables">✅ Permiten trabajar con distintos tipos de variables</h3>
+<ul>
+<li>Binarias (logística)</li>
+<li>De conteo (Poisson, binomial negativa)</li>
+<li>Positivas continuas (Gamma)</li>
+</ul>
+</section>
+<section id="ofrecen-interpretaciones-clínicas-útiles" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ofrecen-interpretaciones-clínicas-útiles">✅ Ofrecen interpretaciones clínicas útiles</h3>
+<ul>
+<li>En logística: <strong>odds ratios</strong></li>
+<li>En Poisson: <strong>tasas relativas</strong></li>
+<li>En Gamma: <strong>relaciones multiplicativas en tiempos o costes</strong></li>
+</ul>
+</section>
+<section id="mejoran-la-precisión-al-respetar-la-naturaleza-de-los-datos" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="mejoran-la-precisión-al-respetar-la-naturaleza-de-los-datos">✅ Mejoran la precisión al respetar la naturaleza de los datos</h3>
+<p>No forzan una distribución normal donde no existe, mejorando la validez estadística de los resultados</p>
+</section>
+<section id="son-fáciles-de-implementar-en-r" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="son-fáciles-de-implementar-en-r">✅ Son fáciles de implementar en R</h3>
+<p>Con funciones básicas como <code>glm()</code> y paquetes adicionales como <code>broom</code>, <code>effects</code> o <code>visreg</code>, podemos construir, visualizar e interpretar modelos rápidamente</p>
+</section>
+<section id="caso-práctico-introductorio-predicción-de-bajo-peso-al-nacer" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="caso-práctico-introductorio-predicción-de-bajo-peso-al-nacer">Caso práctico introductorio: Predicción de bajo peso al nacer</h3>
+<p>Para ilustrar cómo pueden aplicarse los GLM en medicina, vamos a usar el conjunto de datos <code>birthwt</code> del paquete <code>MASS</code>. Este dataset contiene información sobre 189 embarazos y si el bebé nació con bajo peso (&lt; 2500 gramos).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(birthwt)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(birthwt)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   189 obs. of  10 variables:
+ $ low  : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ age  : int  19 33 20 21 18 21 22 17 29 26 ...
+ $ lwt  : int  182 155 105 108 107 124 118 103 123 113 ...
+ $ race : int  2 3 1 1 1 3 1 3 1 1 ...
+ $ smoke: int  0 0 1 1 1 0 0 0 1 1 ...
+ $ ptl  : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ ht   : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ ui   : int  1 0 0 1 1 0 0 0 0 0 ...
+ $ ftv  : int  0 3 1 2 0 0 1 1 1 0 ...
+ $ bwt  : int  2523 2551 2557 2594 2600 2622 2637 2637 2663 2665 ...</code></pre>
+</div>
+</div>
+<p>Algunas variables relevantes: - <code>low</code>: 1 si el bebé nació con bajo peso, 0 en caso contrario - <code>age</code>: edad de la madre - <code>lwt</code>: peso en la última menstruación - <code>smoke</code>: si la madre fumaba durante el embarazo - <code>ptl</code>: número de partos prematuros previos - <code>ht</code>: hipertensión arterial - <code>ui</code>: irritabilidad uterina</p>
+<p>Este tipo de problema requiere un <strong>modelo logístico</strong>, ya que la variable dependiente es binaria. Veremos cómo construirlo y cómo interpretarlo en el próximo capítulo.</p>
+</section>
+<section id="herramientas-en-r-para-glm" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="herramientas-en-r-para-glm">Herramientas en R para GLM</h3>
+<p>Trabajaremos principalmente con estos paquetes:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Paquete</th>
+<th>Funcionalidad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>stats</code></td>
+<td><code>glm()</code> - Modelo base</td>
+</tr>
+<tr class="even">
+<td><code>MASS</code></td>
+<td><code>glm.nb()</code> - Regresión binomial negativa</td>
+</tr>
+<tr class="odd">
+<td><code>broom</code></td>
+<td>Resúmenes limpios de modelos</td>
+</tr>
+<tr class="even">
+<td><code>visreg</code></td>
+<td>Visualización de efectos</td>
+</tr>
+<tr class="odd">
+<td><code>pROC</code></td>
+<td>Curvas ROC y AUC</td>
+</tr>
+<tr class="even">
+<td><code>DHARMa</code></td>
+<td>Diagnóstico de residuos</td>
+</tr>
+</tbody>
+</table>
+<p>Instálalos ahora si no los tienes:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"MASS"</span>, <span class="st">"broom"</span>, <span class="st">"visreg"</span>, <span class="st">"pROC"</span>, <span class="st">"DHARMa"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="capítulo-2-conceptos-básicos-de-los-modelos-lineales-generalizados-glm" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="capítulo-2-conceptos-básicos-de-los-modelos-lineales-generalizados-glm"><span class="header-section-number">6.2</span> 📘 Capítulo 2: Conceptos básicos de los Modelos Lineales Generalizados (GLM)</h2>
+<section id="objetivos-del-capítulo-1" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="objetivos-del-capítulo-1"><span class="header-section-number">6.2.1</span> Objetivos del capítulo:</h3>
+<ul>
+<li>Comprender qué es un modelo lineal generalizado</li>
+<li>Distinguir entre regresión lineal y GLM</li>
+<li>Conocer los tres componentes principales de un GLM</li>
+<li>Entender las funciones de distribución y enlace más usadas</li>
+<li>Saber cómo elegir el modelo adecuado según el tipo de variable</li>
+</ul>
+</section>
+<section id="qué-es-un-modelo-lineal-generalizado" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="qué-es-un-modelo-lineal-generalizado"><span class="header-section-number">6.2.2</span> ¿Qué es un Modelo Lineal Generalizado?</h3>
+<p>Un <strong>Modelo Lineal Generalizado (GLM)</strong> es una extensión de los modelos lineales clásicos que permite modelar variables respuesta que no siguen una distribución normal.</p>
+<p>A diferencia de la regresión lineal tradicional, los GLM permiten:</p>
+<ul>
+<li>Modelar variables dependientes <strong>no normales</strong>: binarias, conteos, positivas continuas…</li>
+<li>Usar una <strong>función de enlace</strong> para relacionar la media de la variable respuesta con una combinación lineal de predictores</li>
+<li>Trabajar sin asumir homocedasticidad ni normalidad de errores</li>
+</ul>
+<p>En resumen, son ideales para muchas situaciones comunes en investigación médica.</p>
+</section>
+<section id="los-tres-componentes-de-un-glm" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="los-tres-componentes-de-un-glm"><span class="header-section-number">6.2.3</span> Los tres componentes de un GLM</h3>
+<p>Un GLM se define por tres elementos fundamentales:</p>
+</section>
+<section id="función-de-distribución" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="función-de-distribución">1. <strong>Función de distribución</strong></h3>
+<p>Es la distribución estadística de la variable respuesta. Algunas distribuciones comunes son:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Distribución</th>
+<th>Tipo de variable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Binomial</td>
+<td>Variable binaria (sí/no)</td>
+</tr>
+<tr class="even">
+<td>Poisson</td>
+<td>Conteos</td>
+</tr>
+<tr class="odd">
+<td>Gamma</td>
+<td>Variables positivas continuas</td>
+</tr>
+<tr class="even">
+<td>Gama inversa</td>
+<td>Tiempos hasta un evento</td>
+</tr>
+<tr class="odd">
+<td>Binomial negativa</td>
+<td>Conteos con sobredispersión</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="función-de-enlace" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="función-de-enlace">2. <strong>Función de enlace</strong></h3>
+<p>Es la relación matemática entre la media de la variable respuesta (<span class="math inline">\(\mu\)</span>) y la combinación lineal de predictores (<span class="math inline">\(\eta\)</span>).</p>
+<p><span class="math display">\[ g(\mu) = \beta_0 + \beta_1 x_1 + \dots + \beta_p x_p \]</span></p>
+<p>Algunas funciones de enlace comunes:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Distribución</th>
+<th>Función de enlace típica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Binomial</td>
+<td>Logit</td>
+</tr>
+<tr class="even">
+<td>Poisson</td>
+<td>Log</td>
+</tr>
+<tr class="odd">
+<td>Gamma</td>
+<td>Inversa</td>
+</tr>
+<tr class="even">
+<td>Normal</td>
+<td>Identidad</td>
+</tr>
+</tbody>
+</table>
+<p>💡 Ejemplo: En la regresión logística, la función de enlace es el <strong>logit</strong>, que transforma probabilidades en valores reales.</p>
+</section>
+<section id="componente-sistemático" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="componente-sistemático">3. <strong>Componente sistemático</strong></h3>
+<p>Es la parte lineal del modelo, formada por la combinación de las variables independientes.</p>
+<p><span class="math display">\[ \eta = X \beta \]</span></p>
+<p>Donde <span class="math inline">\(X\)</span> es la matriz de diseño (variables independientes) y <span class="math inline">\(\beta\)</span> son los coeficientes estimados.</p>
+</section>
+<section id="tipos-de-glm-según-la-variable-dependiente" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="tipos-de-glm-según-la-variable-dependiente">Tipos de GLM según la variable dependiente</h3>
+<p>Dependiendo del tipo de variable que queramos modelar, utilizaremos distintas combinaciones de distribución y función de enlace:</p>
+</section>
+<section id="regresión-logística-variable-binaria" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="regresión-logística-variable-binaria"><span class="header-section-number">6.2.4</span> 🔹 Regresión logística (variable binaria)</h3>
+<ul>
+<li><strong>Distribución:</strong> Binomial</li>
+<li><strong>Función de enlace:</strong> Logit</li>
+<li><strong>Ejemplo médico:</strong> predecir si un paciente desarrollará diabetes (sí/no)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># Para reproducibilidad</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">500</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>datos_medicos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">edad =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">55</span>, <span class="at">sd =</span> <span class="dv">10</span>)),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">imc =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">28</span>, <span class="at">sd =</span> <span class="dv">4</span>), <span class="dv">1</span>),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">presion =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">130</span>, <span class="at">sd =</span> <span class="dv">15</span>)),</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">colesterol =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">200</span>, <span class="at">sd =</span> <span class="dv">40</span>)),</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">fumador =</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.3</span>),</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">familia_diab =</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.25</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculamos el logaritmo de las odds</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>log_odds <span class="ot">&lt;-</span> <span class="fu">with</span>(datos_medicos,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>                 <span class="sc">-</span><span class="dv">6</span> <span class="sc">+</span> <span class="fl">0.05</span> <span class="sc">*</span> edad <span class="sc">+</span> <span class="fl">0.1</span> <span class="sc">*</span> imc <span class="sc">+</span> <span class="fl">0.02</span> <span class="sc">*</span> presion <span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                 <span class="fl">0.01</span> <span class="sc">*</span> colesterol <span class="sc">+</span> <span class="fl">0.8</span> <span class="sc">*</span> fumador <span class="sc">+</span> <span class="fl">1.2</span> <span class="sc">*</span> familia_diab)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertimos a probabilidades con la función logística</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>prob_diabetes <span class="ot">&lt;-</span> <span class="fu">plogis</span>(log_odds)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>prob_diabetes <span class="ot">&lt;-</span> (prob_diabetes <span class="sc">-</span> <span class="fu">min</span>(prob_diabetes)) <span class="sc">/</span> (<span class="fu">max</span>(prob_diabetes) <span class="sc">-</span> <span class="fu">min</span>(prob_diabetes))</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Generamos la variable binaria final</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>datos_medicos<span class="sc">$</span>diabetes <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, prob_diabetes)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>modelo_logistico <span class="ot">&lt;-</span> <span class="fu">glm</span>(diabetes <span class="sc">~</span> edad <span class="sc">+</span> imc <span class="sc">+</span> fumador,</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>                        <span class="at">data =</span> datos_medicos, <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="regresión-de-poisson-conteos" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="regresión-de-poisson-conteos">🔹 Regresión de Poisson (conteos)</h3>
+<ul>
+<li><strong>Distribución:</strong> Poisson</li>
+<li><strong>Función de enlace:</strong> Log</li>
+<li><strong>Ejemplo médico:</strong> número de hospitalizaciones en un año</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)  <span class="co"># Para reproducibilidad</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">300</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>datos_hosp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">edad =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">65</span>, <span class="at">sd =</span> <span class="dv">10</span>)),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">enfermedad =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"HTA"</span>, <span class="st">"Diabetes"</span>, <span class="st">"EPOC"</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">bmi =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">28</span>, <span class="at">sd =</span> <span class="dv">4</span>), <span class="dv">1</span>),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">fumador =</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.3</span>),</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">tiempo_enfermedad =</span> <span class="fu">round</span>(<span class="fu">runif</span>(n, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">15</span>), <span class="dv">1</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculamos el lambda (tasa media de hospitalización) usando un modelo log-lineal</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="sc">-</span><span class="dv">2</span> <span class="sc">+</span> <span class="fl">0.03</span> <span class="sc">*</span> datos_hosp<span class="sc">$</span>edad <span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>              <span class="fu">ifelse</span>(datos_hosp<span class="sc">$</span>enfermedad <span class="sc">==</span> <span class="st">"Diabetes"</span>, <span class="fl">0.4</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">ifelse</span>(datos_hosp<span class="sc">$</span>enfermedad <span class="sc">==</span> <span class="st">"EPOC"</span>, <span class="fl">0.7</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>              <span class="fl">0.02</span> <span class="sc">*</span> datos_hosp<span class="sc">$</span>bmi <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>              <span class="fl">0.5</span> <span class="sc">*</span> datos_hosp<span class="sc">$</span>fumador <span class="sc">+</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>              <span class="fl">0.05</span> <span class="sc">*</span> datos_hosp<span class="sc">$</span>tiempo_enfermedad)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Generamos el número de hospitalizaciones usando una distribución Poisson</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>datos_hosp<span class="sc">$</span>hospitalizaciones <span class="ot">&lt;-</span> <span class="fu">rpois</span>(n, <span class="at">lambda =</span> lambda)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>modelo_poisson <span class="ot">&lt;-</span> <span class="fu">glm</span>(hospitalizaciones <span class="sc">~</span> edad <span class="sc">+</span> enfermedad,</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>                      <span class="at">data =</span> datos_hosp, <span class="at">family =</span> <span class="fu">poisson</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="regresión-gamma-variables-positivas-continuas" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="regresión-gamma-variables-positivas-continuas">🔹 Regresión Gamma (variables positivas continuas)</h3>
+<ul>
+<li><strong>Distribución:</strong> Gamma</li>
+<li><strong>Función de enlace:</strong> Inversa o log</li>
+<li><strong>Ejemplo médico:</strong> tiempo de recuperación tras cirugía</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)  <span class="co"># Para reproducibilidad</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">400</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>datos_cirugia <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">edad =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">60</span>, <span class="at">sd =</span> <span class="dv">12</span>)),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">tratamiento =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">complicaciones =</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.25</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">duracion_cirugia =</span> <span class="fu">round</span>(<span class="fu">runif</span>(n, <span class="at">min =</span> <span class="dv">30</span>, <span class="at">max =</span> <span class="dv">180</span>)),</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">imc =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">27</span>, <span class="at">sd =</span> <span class="dv">4</span>), <span class="dv">1</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulamos el tiempo de recuperación usando un modelo log-lineal</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>log_tiempo_medio <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">+</span> <span class="fl">0.01</span> <span class="sc">*</span> datos_cirugia<span class="sc">$</span>edad <span class="sc">+</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(datos_cirugia<span class="sc">$</span>tratamiento <span class="sc">==</span> <span class="st">"B"</span>, <span class="fl">0.2</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>         <span class="fu">ifelse</span>(datos_cirugia<span class="sc">$</span>tratamiento <span class="sc">==</span> <span class="st">"C"</span>, <span class="fl">0.4</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fl">0.5</span> <span class="sc">*</span> datos_cirugia<span class="sc">$</span>complicaciones <span class="sc">+</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fl">0.005</span> <span class="sc">*</span> datos_cirugia<span class="sc">$</span>duracion_cirugia <span class="sc">+</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fl">0.02</span> <span class="sc">*</span> datos_cirugia<span class="sc">$</span>imc</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Generamos tiempos de recuperación con una distribución log-normal</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>datos_cirugia<span class="sc">$</span>tiempo_recuperacion <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rlnorm</span>(n, <span class="at">meanlog =</span> log_tiempo_medio, <span class="at">sdlog =</span> <span class="fl">0.3</span>), <span class="dv">1</span>)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>modelo_gamma <span class="ot">&lt;-</span> <span class="fu">glm</span>(tiempo_recuperacion <span class="sc">~</span> edad <span class="sc">+</span> tratamiento,</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>                    <span class="at">data =</span> datos_cirugia, <span class="at">family =</span> <span class="fu">Gamma</span>(<span class="at">link =</span> <span class="st">"inverse"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="regresión-lineal-caso-especial-de-glm" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="regresión-lineal-caso-especial-de-glm">🔹 Regresión lineal (caso especial de GLM)</h3>
+<ul>
+<li><strong>Distribución:</strong> Normal</li>
+<li><strong>Función de enlace:</strong> Identidad</li>
+<li><strong>Ejemplo médico:</strong> nivel de colesterol en sangre</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">987</span>)  <span class="co"># Para reproducibilidad</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">600</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>datos_cardio <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">edad =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>)),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">sexo =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Hombre"</span>, <span class="st">"Mujer"</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">peso =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">70</span>, <span class="at">sd =</span> <span class="dv">12</span>), <span class="dv">1</span>),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">altura =</span> <span class="fu">round</span>(<span class="fu">runif</span>(n, <span class="at">min =</span> <span class="fl">1.50</span>, <span class="at">max =</span> <span class="fl">1.90</span>), <span class="dv">2</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculamos el IMC</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>datos_cardio<span class="sc">$</span>imc <span class="ot">&lt;-</span> datos_cardio<span class="sc">$</span>peso <span class="sc">/</span> (datos_cardio<span class="sc">$</span>altura)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables adicionales</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>datos_cardio<span class="sc">$</span>dieta <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="at">prob =</span> <span class="fu">ifelse</span>(datos_cardio<span class="sc">$</span>sexo <span class="sc">==</span> <span class="st">"Mujer"</span>, <span class="fl">0.4</span>, <span class="fl">0.3</span>))</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>datos_cardio<span class="sc">$</span>ejercicio <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">runif</span>(n, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>), <span class="dv">1</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulamos el nivel de colesterol usando un modelo lineal</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>colesterol_base <span class="ot">&lt;-</span> <span class="dv">200</span> <span class="sc">+</span> <span class="fl">0.3</span> <span class="sc">*</span> datos_cardio<span class="sc">$</span>edad <span class="sc">+</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(datos_cardio<span class="sc">$</span>sexo <span class="sc">==</span> <span class="st">"Hombre"</span>, <span class="dv">10</span>, <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.2</span> <span class="sc">*</span> datos_cardio<span class="sc">$</span>imc <span class="sc">+</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span><span class="dv">5</span> <span class="sc">*</span> datos_cardio<span class="sc">$</span>dieta <span class="sc">+</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span><span class="fl">0.4</span> <span class="sc">*</span> datos_cardio<span class="sc">$</span>ejercicio</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Añadimos variabilidad aleatoria</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>datos_cardio<span class="sc">$</span>colesterol <span class="ot">&lt;-</span> <span class="fu">round</span>(colesterol_base <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">sd =</span> <span class="dv">15</span>), <span class="dv">0</span>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>modelo_normal <span class="ot">&lt;-</span> <span class="fu">glm</span>(colesterol <span class="sc">~</span> dieta <span class="sc">+</span> ejercicio,</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> datos_cardio, <span class="at">family =</span> <span class="fu">gaussian</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="elección-del-modelo-correcto" class="level3" data-number="6.2.5">
+<h3 data-number="6.2.5" class="anchored" data-anchor-id="elección-del-modelo-correcto"><span class="header-section-number">6.2.5</span> Elección del modelo correcto</h3>
+<p>Para elegir el GLM adecuado, debes considerar:</p>
+<ol type="1">
+<li><strong>¿Qué tipo de variable es la respuesta?</strong>
+<ul>
+<li>Binaria → logística</li>
+<li>Conteo → Poisson o binomial negativa</li>
+<li>Positiva continua → Gamma</li>
+<li>Proporciones → Beta (fuera de GLM básico, pero hay extensiones)</li>
+</ul></li>
+<li><strong>¿Hay sobredispersión?</strong>
+<ul>
+<li>Si la varianza es mayor que la media en conteos → usa binomial negativa</li>
+</ul></li>
+<li><strong>¿Necesito interpretar resultados clínicos?</strong>
+<ul>
+<li>Odds ratios, tasas relativas… todo esto lo obtienes fácilmente al exponentiar los coeficientes</li>
+</ul></li>
+</ol>
+</section>
+<section id="ejemplo-práctico-elección-del-modelo-en-medicina" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ejemplo-práctico-elección-del-modelo-en-medicina">Ejemplo práctico: elección del modelo en medicina</h3>
+<p>Imagina que trabajas con un dataset sobre pacientes operados y quieres estudiar cuánto tardan en recuperarse.</p>
+<p>Tienes estas variables:</p>
+<ul>
+<li><code>tiempo_recuperacion</code>: días desde la operación hasta alta hospitalaria</li>
+<li><code>edad</code>: años</li>
+<li><code>tratamiento</code>: tipo de intervención (A, B, C)</li>
+<li><code>complicaciones</code>: sí/no</li>
+</ul>
+<p>Podríamos usar un GLM Gamma con enlace logarítmico:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)  <span class="co"># Para reproducibilidad</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">350</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>datos_operados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">edad =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">60</span>, <span class="at">sd =</span> <span class="dv">10</span>)),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">tratamiento =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">complicaciones =</span> <span class="fu">rbinom</span>(n, <span class="dv">1</span>, <span class="fl">0.2</span>),</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">duracion_cirugia =</span> <span class="fu">round</span>(<span class="fu">runif</span>(n, <span class="at">min =</span> <span class="dv">30</span>, <span class="at">max =</span> <span class="dv">180</span>)),</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">imc =</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">27</span>, <span class="at">sd =</span> <span class="dv">4</span>), <span class="dv">1</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulamos el tiempo de recuperación usando un modelo log-lineal</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>log_tiempo_medio <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">+</span> <span class="fl">0.01</span> <span class="sc">*</span> datos_operados<span class="sc">$</span>edad <span class="sc">+</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(datos_operados<span class="sc">$</span>tratamiento <span class="sc">==</span> <span class="st">"B"</span>, <span class="fl">0.2</span>,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>         <span class="fu">ifelse</span>(datos_operados<span class="sc">$</span>tratamiento <span class="sc">==</span> <span class="st">"C"</span>, <span class="fl">0.4</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fl">0.5</span> <span class="sc">*</span> datos_operados<span class="sc">$</span>complicaciones <span class="sc">+</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fl">0.005</span> <span class="sc">*</span> datos_operados<span class="sc">$</span>duracion_cirugia <span class="sc">+</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fl">0.02</span> <span class="sc">*</span> datos_operados<span class="sc">$</span>imc</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Generamos tiempos de recuperación con una distribución log-normal</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>datos_operados<span class="sc">$</span>tiempo_recuperacion <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rlnorm</span>(n, <span class="at">meanlog =</span> log_tiempo_medio, <span class="at">sdlog =</span> <span class="fl">0.3</span>), <span class="dv">1</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>modelo_recuperacion <span class="ot">&lt;-</span> <span class="fu">glm</span>(tiempo_recuperacion <span class="sc">~</span> edad <span class="sc">+</span> tratamiento <span class="sc">+</span> complicaciones,</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>                           <span class="at">data =</span> datos_operados, <span class="at">family =</span> <span class="fu">Gamma</span>(<span class="at">link =</span> <span class="st">"log"</span>))</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo_recuperacion)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = tiempo_recuperacion ~ edad + tratamiento + complicaciones, 
+    family = Gamma(link = "log"), data = datos_operados)
+
+Coefficients:
+               Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)    4.248493   0.132173  32.143  &lt; 2e-16 ***
+edad           0.007516   0.002077   3.619  0.00034 ***
+tratamientoB   0.228853   0.051474   4.446 1.18e-05 ***
+tratamientoC   0.416758   0.048329   8.623 2.40e-16 ***
+complicaciones 0.516802   0.050872  10.159  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for Gamma family taken to be 0.1445412)
+
+    Null deviance: 75.286  on 349  degrees of freedom
+Residual deviance: 47.806  on 345  degrees of freedom
+AIC: 3784.7
+
+Number of Fisher Scoring iterations: 5</code></pre>
+</div>
+</div>
+<p>Este modelo respeta la naturaleza positiva y sesgada del tiempo de recuperación, y nos permite interpretar los efectos como factores multiplicativos del tiempo medio de recuperación.</p>
+</section>
+<section id="interpretación-de-los-coeficientes" class="level3" data-number="6.2.6">
+<h3 data-number="6.2.6" class="anchored" data-anchor-id="interpretación-de-los-coeficientes"><span class="header-section-number">6.2.6</span> Interpretación de los coeficientes</h3>
+<p>Los coeficientes de un GLM se interpretan en escala del predictor lineal, pero al aplicar la función de enlace inversa, podemos obtener predicciones en la escala original de la variable respuesta.</p>
+<p>Por ejemplo, en un modelo logístico:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(modelo_logistico)[<span class="st">"fumador"</span>])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> fumador 
+3.128824 </code></pre>
+</div>
+</div>
+<p>Nos daría el <strong>odds ratio</strong> asociado al hábito tabáquico, algo muy común en estudios médicos.</p>
+</section>
+<section id="diagnóstico-básico-de-modelos" class="level3" data-number="6.2.7">
+<h3 data-number="6.2.7" class="anchored" data-anchor-id="diagnóstico-básico-de-modelos"><span class="header-section-number">6.2.7</span> Diagnóstico básico de modelos</h3>
+<p>Aunque veremos diagnósticos más avanzados en capítulos posteriores, aquí tienes algunas herramientas útiles:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resumen del modelo</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo_recuperacion)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = tiempo_recuperacion ~ edad + tratamiento + complicaciones, 
+    family = Gamma(link = "log"), data = datos_operados)
+
+Coefficients:
+               Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)    4.248493   0.132173  32.143  &lt; 2e-16 ***
+edad           0.007516   0.002077   3.619  0.00034 ***
+tratamientoB   0.228853   0.051474   4.446 1.18e-05 ***
+tratamientoC   0.416758   0.048329   8.623 2.40e-16 ***
+complicaciones 0.516802   0.050872  10.159  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for Gamma family taken to be 0.1445412)
+
+    Null deviance: 75.286  on 349  degrees of freedom
+Residual deviance: 47.806  on 345  degrees of freedom
+AIC: 3784.7
+
+Number of Fisher Scoring iterations: 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Coeficientes exponentiados (útil para logit y log)</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(modelo_logistico, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 7
+  term        estimate std.error statistic    p.value conf.low conf.high
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)  0.00329    1.39       -4.12 0.0000386  0.000201    0.0475
+2 edad         1.05       0.0150      3.39 0.000705   1.02        1.08  
+3 imc          1.19       0.0378      4.54 0.00000572 1.10        1.28  
+4 fumador      3.13       0.390       2.93 0.00344    1.53        7.15  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicciones</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(modelo_recuperacion, <span class="at">type =</span> <span class="st">"response"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        1         2         3         4         5         6         7         8 
+126.23277 112.39500 150.05507 140.23978 171.79357 143.43824 159.35440 133.05222 
+        9        10        11        12        13        14        15        16 
+159.35440 216.47564 160.55667 101.93218 156.97681 281.61652 179.71843 165.45713 
+       17        18        19        20        21        22        23        24 
+160.55667 102.70122 130.08561 131.61246 167.96317 133.05222 271.22936 240.49665 
+       25        26        27        28        29        30        31        32 
+158.16114  98.91318 114.95818 154.63469 166.70544 155.80135 150.05507 269.19837 
+       33        34        35        36        37        38        39        40 
+158.16114 133.05222 247.83651 152.32751  93.14078  99.65944 107.43884 133.05222 
+       41        42        43        44        45        46        47        48 
+122.08271 101.16890 155.80135 162.98848 128.14471 154.63469 153.47677  99.65944 
+       49        50        51        52        53        54        55        56 
+133.05222 133.05222  95.98360 159.35440 101.16890 259.26924 108.24942 242.31110 
+       57        58        59        60        61        62        63        64 
+123.93179 103.47606 188.00887 126.23277 194.19955 201.16707 231.62616 219.75442 
+       65        66        67        68        69        70        71        72 
+166.70544 125.80888 169.62548 185.20374 121.16854 188.44780 166.70544 105.83583 
+       73        74        75        76        77        78        79        80 
+161.76801 144.52043 195.20896 108.24942 150.05476 174.80274 170.50716 107.43884 
+       81        82        83        84        85        86        87        88 
+228.17026 228.17026 124.34936 275.33744 147.81622 115.82549 114.09736 134.05604 
+       89        90        91        92        93        94        95        96 
+275.33744 126.23277 109.06612 112.39500 156.97713 148.93144 160.55667 171.79357 
+       97        98        99       100       101       102       103       104 
+101.16890 117.57980 301.32606 195.20896 171.79357 177.45033 139.18993 133.05222 
+      105       106       107       108       109       110       111       112 
+218.10887 111.55338 102.70122 187.03668 238.69578 109.06612 275.33744 267.18258 
+      113       114       115       116       117       118       119       120 
+101.16890 177.03701 166.70544 116.69935 126.23277 169.23039 175.71133 138.14766 
+      121       122       123       124       125       126       127       128 
+108.24942 156.97681 161.76834 116.69935 190.85648 167.96317 221.41238 206.92994 
+      129       130       131       132       133       134       135       136 
+159.35440 140.24007 118.46689 141.29812 126.23277 175.71133 121.57680 106.63432 
+      137       138       139       140       141       142       143       144 
+107.43884 144.52014 147.81622 105.04332 135.06744 310.52304 114.95818 277.41476 
+      145       146       147       148       149       150       151       152 
+114.09736 113.24298 156.97713 112.39500 114.09736 188.44780 106.63432 110.71805 
+      153       154       155       156       157       158       159       160 
+155.80166 172.19465 167.96317 122.08271 164.21817 153.47677 155.80135 161.76801 
+      161       162       163       164       165       166       167       168 
+173.49379 135.06744 134.05604 164.21817 171.79357 292.40147 124.86680 137.11319 
+      169       170       171       172       173       174       175       176 
+162.98848 186.60104 124.86680 138.14766 135.06744  95.98360 185.20374 130.08561 
+      177       178       179       180       181       182       183       184 
+153.47677 208.87108 140.24007 166.70544 112.77370 165.45713 148.93144 142.36416 
+      185       186       187       188       189       190       191       192 
+299.06970 127.71440 151.18718 160.55667 244.13925 164.21817 160.55667 111.09110 
+      193       194       195       196       197       198       199       200 
+103.47606 290.21194 162.98882 143.43824 144.52043 128.14471 169.23039 197.80516 
+      201       202       203       204       205       206       207       208 
+114.09736 145.61078 169.23039 115.82549 112.39500 116.69935 125.80888 150.05507 
+      209       210       211       212       213       214       215       216 
+109.88898 101.16890 171.79357 134.05604 312.86582 147.81592 134.05604 171.79357 
+      217       218       219       220       221       222       223       224 
+164.21817 132.05590 107.43884 242.31110 178.37268 244.13925 130.62693 201.63673 
+      225       226       227       228       229       230       231       232 
+112.39500 131.06705 207.30703 175.71133 104.25674 283.74121 162.98848 226.46169 
+      233       234       235       236       237       238       239       240 
+129.11151 167.96317 285.88193 101.16890 108.61415 162.98848 166.70544 144.52043 
+      241       242       243       244       245       246       247       248 
+233.37369 171.79357 153.47677 145.61078 145.61078 112.39500 310.52304 171.79357 
+      249       250       251       252       253       254       255       256 
+112.39500 141.29812 189.86957 303.59945 173.08969 194.19955 127.18515 134.05604 
+      257       258       259       260       261       262       263       264 
+123.00377 152.32751 112.39500 171.79357 148.93144 107.43884 169.23039 160.93151 
+      265       266       267       268       269       270       271       272 
+141.29812 104.25674 164.21817 126.23277 189.86957 145.61078 180.13801 125.80888 
+      273       274       275       276       277       278       279       280 
+115.82549 178.37268 127.71440 131.06705 177.03701 118.46689 166.70544 188.44780 
+      281       282       283       284       285       286       287       288 
+101.93218 143.43824 104.25674 177.03701 130.08561 285.88193 173.49379 108.24942 
+      289       290       291       292       293       294       295       296 
+147.81592 167.96317 179.71843 187.03668 202.31612 105.04332 124.86680 125.80888 
+      297       298       299       300       301       302       303       304 
+152.32751 134.05604 142.36416 170.50716 159.35440 154.63469 108.24942 148.93144 
+      305       306       307       308       309       310       311       312 
+138.14766 132.05590 105.83583 123.93179 224.76592 296.83023 206.23506 189.86957 
+      313       314       315       316       317       318       319       320 
+178.78912 166.70544 105.83583 120.26121 165.45713 123.00377 105.04332 159.35440 
+      321       322       323       324       325       326       327       328 
+233.37369 279.50774 105.83583  97.43738 109.88898 131.06705 181.07434 154.63469 
+      329       330       331       332       333       334       335       336 
+119.36068 267.18258 112.39500 117.57980 177.45033 174.39558 137.11319 153.47677 
+      337       338       339       340       341       342       343       344 
+135.06744 261.22586 164.21817 103.47606 229.89172 112.39500 179.71843 181.07434 
+      345       346       347       348       349       350 
+110.71805 120.26121 218.10887 154.99571 133.05222 160.55667 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="capítulo-3-regresión-logística-en-medicina" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="capítulo-3-regresión-logística-en-medicina"><span class="header-section-number">6.3</span> 📘 Capítulo 3: Regresión logística en medicina</h2>
+<section id="objetivos-del-capítulo-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="objetivos-del-capítulo-2">Objetivos del capítulo:</h3>
+<ul>
+<li>Entender qué es la regresión logística y cuándo usarla</li>
+<li>Aprender a construir un modelo logístico en R</li>
+<li>Interpretar los coeficientes como <strong>odds ratios</strong></li>
+<li>Evaluar el ajuste del modelo (AUC, curva ROC, matriz de confusión)</li>
+<li>Visualizar efectos de las variables predictoras</li>
+</ul>
+</section>
+<section id="qué-es-la-regresión-logística" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="qué-es-la-regresión-logística">¿Qué es la regresión logística?</h3>
+<p>La <strong>regresión logística</strong> es un tipo de Modelo Lineal Generalizado (GLM) utilizado cuando la variable dependiente es <strong>binaria</strong>, es decir, tiene dos posibles resultados:</p>
+<ul>
+<li>Éxito / Fracaso</li>
+<li>Presencia / Ausencia</li>
+<li>Sí / No</li>
+<li>Enfermo / Sano</li>
+</ul>
+<p>En lugar de predecir directamente el valor de la variable respuesta, la regresión logística predice la <strong>probabilidad</strong> de que ocurra un evento.</p>
+<p>La relación entre las variables independientes y la probabilidad se modela mediante la <strong>función logit</strong>:</p>
+<p><span class="math display">\[
+\log\left(\frac{p}{1 - p}\right) = \beta_0 + \beta_1 x_1 + \dots + \beta_p x_p
+\]</span></p>
+<p>Donde <span class="math inline">\(p\)</span> es la probabilidad de que ocurra el evento.</p>
+</section>
+<section id="ejemplo-médico-predicción-de-riesgo-de-diabetes" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ejemplo-médico-predicción-de-riesgo-de-diabetes">Ejemplo médico: Predicción de riesgo de diabetes</h3>
+<p>Usaremos el dataset simulado <code>datos_medicos</code>, que contiene información de 500 pacientes y una variable binaria <code>diabetes</code> que indica si tienen o no diabetes.</p>
+</section>
+<section id="construcción-del-modelo-logístico" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="construcción-del-modelo-logístico">Construcción del modelo logístico</h3>
+<p>Vamos a construir un modelo para predecir la probabilidad de tener diabetes en función de la edad, IMC, si fuma y si hay antecedentes familiares.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>modelo_logistico <span class="ot">&lt;-</span> <span class="fu">glm</span>(diabetes <span class="sc">~</span> edad <span class="sc">+</span> imc <span class="sc">+</span> fumador <span class="sc">+</span> familia_diab,</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">data =</span> datos_medicos, <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>))</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo_logistico)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = diabetes ~ edad + imc + fumador + familia_diab, 
+    family = binomial(link = "logit"), data = datos_medicos)
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)  -6.40003    1.46226  -4.377  1.2e-05 ***
+edad          0.05460    0.01549   3.525 0.000424 ***
+imc           0.18036    0.03897   4.628  3.7e-06 ***
+fumador       1.32734    0.39826   3.333 0.000860 ***
+familia_diab  1.38516    0.46612   2.972 0.002962 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 382.57  on 499  degrees of freedom
+Residual deviance: 331.47  on 495  degrees of freedom
+AIC: 341.47
+
+Number of Fisher Scoring iterations: 6</code></pre>
+</div>
+</div>
+</section>
+<section id="salida-resumen" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="salida-resumen">Salida (resumen):</h3>
+<p>Este código nos dará una salida similar a:</p>
+<pre><code>Coefficients:
+              Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)    -5.9321     0.7541  -7.866 3.67e-15 ***
+edad            0.0493     0.0121   4.074 4.63e-05 ***
+imc             0.1011     0.0247   4.093 4.26e-05 ***
+fumador         0.7812     0.2338   3.341 0.000835 ***
+familia_diab    1.1823     0.2714   4.357 1.32e-05 ***</code></pre>
+</section>
+<section id="interpretación-de-los-coeficientes-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="interpretación-de-los-coeficientes-1">Interpretación de los coeficientes</h3>
+<p>Los coeficientes están en escala log-odds, pero al exponentiarlos obtenemos los <strong>odds ratios</strong>, que son más interpretables clínicamente.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>tidy_modelo <span class="ot">&lt;-</span> <span class="fu">tidy</span>(modelo_logistico, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>tidy_modelo</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 7
+  term         estimate std.error statistic    p.value  conf.low conf.high
+  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)   0.00166    1.46       -4.38 0.0000120  0.0000872    0.0274
+2 edad          1.06       0.0155      3.52 0.000424   1.03         1.09  
+3 imc           1.20       0.0390      4.63 0.00000370 1.11         1.30  
+4 fumador       3.77       0.398       3.33 0.000860   1.81         8.75  
+5 familia_diab  4.00       0.466       2.97 0.00296    1.72        11.0   </code></pre>
+</div>
+</div>
+<p>Ejemplo de interpretación:</p>
+<ul>
+<li>Un punto adicional de <strong>IMC</strong> aumenta la <strong>odds de tener diabetes en un factor de aproximadamente 1.10</strong> (un 10% más de odds).</li>
+<li>Tener <strong>antecedentes familiares de diabetes</strong> multiplica por <strong>3.26</strong> las probabilidades de tener diabetes.</li>
+</ul>
+</section>
+<section id="evaluación-del-modelo" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="evaluación-del-modelo">Evaluación del modelo</h3>
+</section>
+<section id="predicciones-de-probabilidad" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="predicciones-de-probabilidad">1. Predicciones de probabilidad</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>predicciones <span class="ot">&lt;-</span> <span class="fu">predict</span>(modelo_logistico, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(predicciones)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        1         2         3         4         5         6 
+0.7094187 0.8956432 0.9632471 0.9727757 0.6514602 0.9247754 </code></pre>
+</div>
+</div>
+</section>
+<section id="curva-roc-y-auc" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="curva-roc-y-auc">2. Curva ROC y AUC</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pROC)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Type 'citation("pROC")' for a citation.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Adjuntando el paquete: 'pROC'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    cov, smooth, var</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>roc_obj <span class="ot">&lt;-</span> <span class="fu">roc</span>(datos_medicos<span class="sc">$</span>diabetes, predicciones)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Setting levels: control = 0, case = 1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Setting direction: controls &lt; cases</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(roc_obj, <span class="at">main =</span> <span class="st">"Curva ROC del modelo logístico"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Modelos_lineales_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">auc</span>(roc_obj)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Area under the curve: 0.754</code></pre>
+</div>
+</div>
+<p>Un <strong>AUC cercano a 1</strong> indica buen rendimiento discriminativo.</p>
+</section>
+<section id="matriz-de-confusión" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="matriz-de-confusión">3. Matriz de confusión</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>predicciones_clase <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(predicciones <span class="sc">&gt;</span> <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="at">real =</span> datos_medicos<span class="sc">$</span>diabetes, <span class="at">predicho =</span> predicciones_clase)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    predicho
+real   0   1
+   0   5  59
+   1   0 436</code></pre>
+</div>
+</div>
+</section>
+<section id="métricas-básicas" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="métricas-básicas">4. Métricas básicas</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(caret)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Cargando paquete requerido: ggplot2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Cargando paquete requerido: lattice</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">confusionMatrix</span>(<span class="fu">factor</span>(predicciones_clase), <span class="fu">factor</span>(datos_medicos<span class="sc">$</span>diabetes))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Confusion Matrix and Statistics
+
+          Reference
+Prediction   0   1
+         0   5   0
+         1  59 436
+                                          
+               Accuracy : 0.882           
+                 95% CI : (0.8504, 0.9089)
+    No Information Rate : 0.872           
+    P-Value [Acc &gt; NIR] : 0.277           
+                                          
+                  Kappa : 0.1288          
+                                          
+ Mcnemar's Test P-Value : 4.321e-14       
+                                          
+            Sensitivity : 0.07812         
+            Specificity : 1.00000         
+         Pos Pred Value : 1.00000         
+         Neg Pred Value : 0.88081         
+             Prevalence : 0.12800         
+         Detection Rate : 0.01000         
+   Detection Prevalence : 0.01000         
+      Balanced Accuracy : 0.53906         
+                                          
+       'Positive' Class : 0               
+                                          </code></pre>
+</div>
+</div>
+</section>
+<section id="visualización-de-efectos" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="visualización-de-efectos">Visualización de efectos</h3>
+</section>
+<section id="usando-visreg" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="usando-visreg">Usando <code>visreg</code>:</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visreg)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">visreg</span>(modelo_logistico, <span class="st">"imc"</span>, <span class="at">scale =</span> <span class="st">"response"</span>,</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"Índice de masa corporal"</span>, <span class="at">ylab =</span> <span class="st">"Probabilidad de diabetes"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Modelos_lineales_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="efecto-de-antecedentes-familiares" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="efecto-de-antecedentes-familiares">Efecto de antecedentes familiares:</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visreg</span>(modelo_logistico, <span class="st">"familia_diab"</span>, <span class="at">scale =</span> <span class="st">"response"</span>,</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"Antecedentes familiares"</span>, <span class="at">ylab =</span> <span class="st">"Probabilidad de diabetes"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Modelos_lineales_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusión" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="conclusión">Conclusión</h3>
+<p>La regresión logística es una herramienta fundamental en investigación médica para modelar variables binarias. Permite:</p>
+<ul>
+<li>Predecir riesgos (ej. desarrollo de enfermedades)</li>
+<li>Calcular odds ratios fácilmente</li>
+<li>Validar modelos con métricas clínicas relevantes (AUC, sensibilidad, especificidad)</li>
+<li>Visualizar efectos de forma intuitiva</li>
+</ul>
+</section>
+</section>
+<section id="capítulo-4-regresión-de-poisson-y-binomial-negativa-en-medicina" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="capítulo-4-regresión-de-poisson-y-binomial-negativa-en-medicina"><span class="header-section-number">6.4</span> 📘 Capítulo 4: Regresión de Poisson y binomial negativa en medicina</h2>
+<section id="objetivos-del-capítulo-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="objetivos-del-capítulo-3">Objetivos del capítulo:</h3>
+<ul>
+<li>Entender qué es un modelo de conteo y cuándo usarlo</li>
+<li>Aprender a construir modelos de Poisson y binomial negativa en R</li>
+<li>Detectar y manejar la <strong>sobredispersión</strong></li>
+<li>Interpretar los coeficientes como <strong>tasas relativas</strong></li>
+<li>Validar y visualizar resultados clínicos relevantes</li>
+</ul>
+</section>
+<section id="qué-es-la-regresión-de-poisson" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="qué-es-la-regresión-de-poisson"><span class="header-section-number">6.4.1</span> ¿Qué es la regresión de Poisson?</h3>
+<p>La <strong>regresión de Poisson</strong> es un tipo de Modelo Lineal Generalizado (GLM) usado cuando la variable dependiente representa <strong>conteos</strong>, es decir, valores enteros no negativos:</p>
+<ul>
+<li>Número de hospitalizaciones en un año</li>
+<li>Número de recaídas</li>
+<li>Número de eventos adversos</li>
+<li>Número de infecciones</li>
+</ul>
+<p>Este modelo asume que la <strong>media y la varianza son iguales</strong>, lo cual no siempre ocurre en la práctica médica.</p>
+</section>
+<section id="ejemplo-médico-número-de-hospitalizaciones" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ejemplo-médico-número-de-hospitalizaciones">Ejemplo médico: Número de hospitalizaciones</h3>
+<p>Usaremos el dataset simulado <code>datos_hosp</code>, que contiene información de 300 pacientes y una variable <code>hospitalizaciones</code> que indica cuántas veces han sido hospitalizados en el último año.</p>
+</section>
+<section id="construcción-del-modelo-de-poisson" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="construcción-del-modelo-de-poisson">Construcción del modelo de Poisson</h3>
+<p>Vamos a construir un modelo para predecir el número de hospitalizaciones en función de la edad, enfermedad, IMC, si fuma y el tiempo desde el diagnóstico.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>modelo_poisson <span class="ot">&lt;-</span> <span class="fu">glm</span>(hospitalizaciones <span class="sc">~</span> edad <span class="sc">+</span> enfermedad <span class="sc">+</span> bmi <span class="sc">+</span> fumador <span class="sc">+</span> tiempo_enfermedad,</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">data =</span> datos_hosp, <span class="at">family =</span> <span class="fu">poisson</span>())</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo_poisson)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = hospitalizaciones ~ edad + enfermedad + bmi + fumador + 
+    tiempo_enfermedad, family = poisson(), data = datos_hosp)
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -1.575426   0.267668  -5.886 3.96e-09 ***
+edad               0.029293   0.002833  10.341  &lt; 2e-16 ***
+enfermedadEPOC     0.308507   0.060312   5.115 3.13e-07 ***
+enfermedadHTA     -0.401106   0.074307  -5.398 6.74e-08 ***
+bmi                0.016149   0.006558   2.463   0.0138 *  
+fumador            0.571971   0.053827  10.626  &lt; 2e-16 ***
+tiempo_enfermedad  0.061805   0.006604   9.359  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 696.17  on 299  degrees of freedom
+Residual deviance: 242.76  on 293  degrees of freedom
+AIC: 1205.5
+
+Number of Fisher Scoring iterations: 5</code></pre>
+</div>
+</div>
+</section>
+<section id="salida-resumen-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="salida-resumen-1">Salida (resumen):</h3>
+<p>Ejemplo de salida:</p>
+<pre><code>Coefficients:
+                  Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -1.98      0.15    -13.2   &lt;2e-16 ***
+edad               0.03      0.003     9.9   &lt;2e-16 ***
+enfermedadDiabetes 0.41      0.08      5.1   3e-07 ***
+enfermedadEPOC     0.69      0.07     10.1   &lt;2e-16 ***
+bmi                0.02      0.005     4.2   2e-05 ***
+fumador            0.52      0.07      7.4   1e-13 ***
+tiempo_enfermedad  0.05      0.009     5.7   1e-08 ***</code></pre>
+</section>
+<section id="interpretación-de-los-coeficientes-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="interpretación-de-los-coeficientes-2">Interpretación de los coeficientes</h3>
+<p>Los coeficientes están en escala logarítmica, por lo que al exponentiarlos obtenemos las <strong>tasas relativas</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>tidy_modelo <span class="ot">&lt;-</span> <span class="fu">tidy</span>(modelo_poisson, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>, <span class="at">conf.int =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>tidy_modelo</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 7
+  term              estimate std.error statistic  p.value conf.low conf.high
+  &lt;chr&gt;                &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+1 (Intercept)          0.207   0.268       -5.89 3.96e- 9    0.122     0.350
+2 edad                 1.03    0.00283     10.3  4.57e-25    1.02      1.04 
+3 enfermedadEPOC       1.36    0.0603       5.12 3.13e- 7    1.21      1.53 
+4 enfermedadHTA        0.670   0.0743      -5.40 6.74e- 8    0.578     0.774
+5 bmi                  1.02    0.00656      2.46 1.38e- 2    1.00      1.03 
+6 fumador              1.77    0.0538      10.6  2.25e-26    1.59      1.97 
+7 tiempo_enfermedad    1.06    0.00660      9.36 8.03e-21    1.05      1.08 </code></pre>
+</div>
+</div>
+</section>
+<section id="ejemplo-de-interpretación" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ejemplo-de-interpretación">Ejemplo de interpretación:</h3>
+<ul>
+<li>Un punto adicional de <strong>IMC</strong> multiplica la tasa de hospitalización por <strong>1.02</strong>.</li>
+<li>Ser <strong>fumador</strong> multiplica la tasa de hospitalización por <strong>1.68</strong>.</li>
+<li>Tener <strong>EPOC</strong> multiplica la tasa por <strong>2.00</strong> respecto a tener HTA.</li>
+</ul>
+</section>
+<section id="diagnóstico-hay-sobredispersión" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="diagnóstico-hay-sobredispersión">Diagnóstico: ¿Hay sobredispersión?</h3>
+<p>Un supuesto importante de la regresión de Poisson es que la <strong>varianza sea igual a la media</strong>. En muchos casos médicos esto no se cumple → <strong>sobredispersión</strong>.</p>
+</section>
+<section id="comprobación-rápida" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="comprobación-rápida">Comprobación rápida:</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">var</span>(datos_hosp<span class="sc">$</span>hospitalizaciones) <span class="sc">&gt;</span> <span class="fu">mean</span>(datos_hosp<span class="sc">$</span>hospitalizaciones)) {</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Advertencia: Sobredispersión detectada."</span>)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Advertencia: Sobredispersión detectada."</code></pre>
+</div>
+</div>
+<p>También puedes calcular el cociente:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>phi <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">residuals</span>(modelo_poisson, <span class="at">type =</span> <span class="st">"pearson"</span>)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="fu">df.residual</span>(modelo_poisson)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Índice de dispersión:"</span>, phi))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Índice de dispersión: 0.800588043062644"</code></pre>
+</div>
+</div>
+<p>Si <strong>phi &gt; 1.5</strong>, hay sobredispersión significativa.</p>
+</section>
+<section id="alternativa-regresión-binomial-negativa" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="alternativa-regresión-binomial-negativa">Alternativa: Regresión binomial negativa</h3>
+<p>Cuando hay sobredispersión, se puede usar la <strong>regresión binomial negativa</strong>, que permite que la varianza sea mayor que la media.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>modelo_negbin <span class="ot">&lt;-</span> <span class="fu">glm.nb</span>(hospitalizaciones <span class="sc">~</span> edad <span class="sc">+</span> enfermedad <span class="sc">+</span> bmi <span class="sc">+</span> fumador <span class="sc">+</span> tiempo_enfermedad,</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">data =</span> datos_hosp)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in theta.ml(Y, mu, sum(w), w, limit = control$maxit, trace =
+control$trace &gt; : iteration limit reached
+Warning in theta.ml(Y, mu, sum(w), w, limit = control$maxit, trace =
+control$trace &gt; : iteration limit reached</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo_negbin)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm.nb(formula = hospitalizaciones ~ edad + enfermedad + bmi + 
+    fumador + tiempo_enfermedad, data = datos_hosp, init.theta = 70465.45106, 
+    link = log)
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -1.575448   0.267683  -5.885 3.97e-09 ***
+edad               0.029293   0.002833  10.341  &lt; 2e-16 ***
+enfermedadEPOC     0.308508   0.060315   5.115 3.14e-07 ***
+enfermedadHTA     -0.401107   0.074310  -5.398 6.75e-08 ***
+bmi                0.016150   0.006558   2.463   0.0138 *  
+fumador            0.571978   0.053830  10.626  &lt; 2e-16 ***
+tiempo_enfermedad  0.061805   0.006604   9.359  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for Negative Binomial(70465.45) family taken to be 1)
+
+    Null deviance: 696.12  on 299  degrees of freedom
+Residual deviance: 242.74  on 293  degrees of freedom
+AIC: 1207.5
+
+Number of Fisher Scoring iterations: 1
+
+              Theta:  70465 
+          Std. Err.:  528410 
+Warning while fitting theta: iteration limit reached 
+
+ 2 x log-likelihood:  -1191.457 </code></pre>
+</div>
+</div>
+<p>Este modelo también interpreta los coeficientes como tasas relativas.</p>
+</section>
+<section id="evaluación-del-modelo-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="evaluación-del-modelo-1">Evaluación del modelo</h3>
+</section>
+<section id="predicciones-de-conteo-esperado" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="predicciones-de-conteo-esperado">1. Predicciones de conteo esperado</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>predicciones <span class="ot">&lt;-</span> <span class="fu">predict</span>(modelo_negbin, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(predicciones)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1        2        3        4        5        6 
+2.304840 4.317644 4.950760 3.077807 2.766315 5.477275 </code></pre>
+</div>
+</div>
+</section>
+<section id="gráfico-de-residuos" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="gráfico-de-residuos">2. Gráfico de residuos</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(modelo_negbin), <span class="fu">residuals</span>(modelo_negbin, <span class="at">type =</span> <span class="st">"pearson"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Modelos_lineales_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="comparación-de-modelos-aic" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="comparación-de-modelos-aic">3. Comparación de modelos (AIC)</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AIC</span>(modelo_poisson, modelo_negbin)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               df      AIC
+modelo_poisson  7 1205.452
+modelo_negbin   8 1207.457</code></pre>
+</div>
+</div>
+<p>El modelo con menor AIC tiene mejor ajuste.</p>
+</section>
+<section id="visualización-de-efectos-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="visualización-de-efectos-1">Visualización de efectos</h3>
+</section>
+<section id="usando-visreg-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="usando-visreg-1">Usando <code>visreg</code>:</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(visreg)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">visreg</span>(modelo_negbin, <span class="st">"bmi"</span>, <span class="at">scale =</span> <span class="st">"response"</span>,</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"Índice de masa corporal"</span>, <span class="at">ylab =</span> <span class="st">"Número esperado de hospitalizaciones"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in theta.ml(Y, mu, sum(w), w, limit = control$maxit, trace =
+control$trace &gt; : iteration limit reached
+Warning in theta.ml(Y, mu, sum(w), w, limit = control$maxit, trace =
+control$trace &gt; : iteration limit reached</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Modelos_lineales_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="efecto-de-ser-fumador" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="efecto-de-ser-fumador">Efecto de ser fumador:</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">visreg</span>(modelo_negbin, <span class="st">"fumador"</span>, <span class="at">scale =</span> <span class="st">"response"</span>,</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab =</span> <span class="st">"Fumador"</span>, <span class="at">ylab =</span> <span class="st">"Número esperado de hospitalizaciones"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in theta.ml(Y, mu, sum(w), w, limit = control$maxit, trace =
+control$trace &gt; : iteration limit reached
+Warning in theta.ml(Y, mu, sum(w), w, limit = control$maxit, trace =
+control$trace &gt; : iteration limit reached</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Modelos_lineales_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusión-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="conclusión-1">Conclusión</h3>
+<p>La regresión de Poisson y la binomial negativa son herramientas clave para modelar variables de conteo en investigación médica. Permite:</p>
+<ul>
+<li>Modelar eventos repetidos (ej. hospitalizaciones, recaídas)</li>
+<li>Manejar sobredispersión con la binomial negativa</li>
+<li>Interpretar resultados como <strong>tasas relativas</strong></li>
+<li>Visualizar efectos de forma intuitiva</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -430,8 +1727,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -542,7 +1837,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
